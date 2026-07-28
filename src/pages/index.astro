@@ -8,13 +8,26 @@ const base = import.meta.env.BASE_URL;
 const news = (await getCollection('news'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
+
+const heroSrc = site.heroImage
+  ? `${base}${site.heroImage.replace(/^\//, '')}`
+  : undefined;
 ---
 
 <BaseLayout>
   <!-- Hero -->
-  <section class="relative overflow-hidden bg-ink text-white">
+  <section class="relative min-h-[88vh] overflow-hidden bg-ink text-white">
+    {
+      heroSrc && (
+        <img
+          src={heroSrc}
+          alt="C2E group gathering"
+          class="absolute inset-0 h-full w-full object-cover animate-[fade-in_1.2s_ease-out_both]"
+        />
+      )
+    }
     <div
-      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_20%,rgba(20,145,155,0.35),transparent_55%),linear-gradient(160deg,#0b1c2c_0%,#123447_55%,#0d7377_140%)]"
+      class="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/35"
       aria-hidden="true"
     >
     </div>
@@ -28,7 +41,7 @@ const news = (await getCollection('news'))
         {site.headline}
       </h1>
       <p
-        class="mt-5 max-w-xl animate-[fade-up_0.7s_ease-out_0.2s_both] text-base leading-relaxed text-white/75 md:text-lg"
+        class="mt-5 max-w-xl animate-[fade-up_0.7s_ease-out_0.2s_both] text-base leading-relaxed text-white/80 md:text-lg"
       >
         {site.description}
       </p>
@@ -46,7 +59,7 @@ const news = (await getCollection('news'))
           Contact
         </a>
       </div>
-      <p class="mt-10 text-sm text-white/55 animate-[fade-in_1s_ease-out_0.4s_both]">
+      <p class="mt-10 text-sm text-white/60 animate-[fade-in_1s_ease-out_0.4s_both]">
         {site.tagline} · Led by {site.pi.name}
       </p>
     </div>
@@ -82,21 +95,36 @@ const news = (await getCollection('news'))
       <h2 class="mt-3 max-w-xl font-display text-3xl font-semibold text-ink md:text-4xl">
         Four focus areas
       </h2>
-      <ul class="mt-12 grid list-none gap-x-10 gap-y-12 p-0 sm:grid-cols-2">
+      <ul class="mt-12 grid list-none gap-8 p-0 sm:grid-cols-2">
         {
-          site.researchAreas.map((area, i) => (
-            <li class="border-t border-line pt-6">
-              <span class="text-xs font-medium text-muted">0{i + 1}</span>
-              <h3 class="mt-2 font-display text-xl font-semibold text-ink">{area.title}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-muted">{area.summary}</p>
-              <a
-                href={`${base}publications/?field=${area.id}`}
-                class="mt-4 inline-block text-sm font-medium text-teal hover:underline"
-              >
-                Related publications
-              </a>
-            </li>
-          ))
+          site.researchAreas.map((area, i) => {
+            const img = area.image
+              ? `${base}${area.image.replace(/^\//, '')}`
+              : undefined;
+            return (
+              <li class="overflow-hidden border-t border-line pt-6">
+                {img && (
+                  <div class="mb-5 overflow-hidden rounded-md bg-surface">
+                    <img
+                      src={img}
+                      alt=""
+                      class="aspect-[16/9] w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <span class="text-xs font-medium text-muted">0{i + 1}</span>
+                <h3 class="mt-2 font-display text-xl font-semibold text-ink">{area.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-muted">{area.summary}</p>
+                <a
+                  href={`${base}publications/?field=${area.id}`}
+                  class="mt-4 inline-block text-sm font-medium text-teal hover:underline"
+                >
+                  Related publications
+                </a>
+              </li>
+            );
+          })
         }
       </ul>
     </div>
@@ -120,6 +148,7 @@ const news = (await getCollection('news'))
               date={item.data.date}
               summary={item.data.summary}
               href={`${base}news/${item.id}/`}
+              image={item.data.image}
             />
           ))
         }

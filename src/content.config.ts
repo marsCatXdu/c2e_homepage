@@ -19,7 +19,8 @@ const people = defineCollection({
     role: z.enum(['faculty', 'staff', 'student', 'alumni']),
     title: z.string(),
     email: z.string().optional(),
-    website: z.string().url().optional(),
+    website: z.string().optional(),
+    photo: z.string().optional(),
     order: z.number().default(100),
   }),
 });
@@ -41,7 +42,7 @@ const publications = defineCollection({
         'online-algorithms',
       ]),
     ),
-    url: z.string().url().optional(),
+    url: z.string().optional(),
   }),
 });
 

@@ -4,7 +4,7 @@
   "affiliation": "Department of Electronic and Computer Engineering, HKUST",
   "tagline": "Computing, Communications, and Energy System Optimization",
   "headline": "Committed to Optimizing Networked Systems",
-  "description": "We enhance the performance of engineering systems through mathematical modeling and optimization — from cloud and edge computing to wireless networks and smart energy systems.",
+  "description": "We enhance the performance of engineering systems through mathematical modeling and optimization \u2014 from cloud and edge computing to wireless networks and smart energy systems.",
   "email": "eetsang@ece.ust.hk",
   "pi": {
     "name": "Prof. Danny H.K. Tsang",
@@ -14,22 +14,27 @@
     {
       "id": "smart-grids",
       "title": "Smart Grids",
-      "summary": "EV charging, renewable energy management, frequency regulation, and pricing in power networks."
+      "summary": "EV charging, renewable energy management, frequency regulation, and pricing in power networks.",
+      "image": "/images/research/smart-grids.png"
     },
     {
       "id": "cloud-edge",
       "title": "Cloud / Edge Computing",
-      "summary": "Resource management, offloading, and performance optimization for cloud and mobile edge systems."
+      "summary": "Resource management, offloading, and performance optimization for cloud and mobile edge systems.",
+      "image": "/images/research/cloud-edge.jpg"
     },
     {
       "id": "wireless",
       "title": "Wireless Communications",
-      "summary": "NOMA, IRS-assisted MEC, and next-generation wireless networking."
+      "summary": "NOMA, IRS-assisted MEC, and next-generation wireless networking.",
+      "image": "/images/research/wireless.jpg"
     },
     {
       "id": "online-algorithms",
       "title": "Online Algorithm Design",
-      "summary": "Competitive algorithms and mechanism design for resource allocation under uncertainty."
+      "summary": "Competitive algorithms and mechanism design for resource allocation under uncertainty.",
+      "image": "/images/research/cloud-edge.jpg"
     }
-  ]
+  ],
+  "heroImage": "/images/hero/group-gathering-2024.jpg"
 }

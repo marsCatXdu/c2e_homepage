@@ -16,8 +16,7 @@ const publications = (await getCollection('publications'))
     <p class="text-xs font-semibold uppercase tracking-[0.15em] text-teal">Publications</p>
     <h1 class="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">Selected papers</h1>
     <p class="mt-4 max-w-2xl text-muted">
-      Sample entries across research fields. Extend the list in
-      <code class="text-sm">src/content/publications/publications.yaml</code>.
+      Journal and conference papers from the C2E group. Filter by type or research field.
     </p>
     <div class="mt-12">
       <PubList publications={publications} />

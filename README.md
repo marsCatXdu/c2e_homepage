@@ -51,6 +51,13 @@ BASE_PATH=/main/ npm run build
 | News posts | [`src/content/news/*.md`](src/content/news/) |
 | People | [`src/content/people/*.md`](src/content/people/) |
 | Publications | [`src/content/publications/publications.yaml`](src/content/publications/publications.yaml) |
+| Images | [`public/images/`](public/images/) |
+
+To re-import from the old WordPress site:
+
+```bash
+python3 scripts/migrate_from_wordpress.py
+```
 
 ### Add a news post
 
@@ -100,10 +107,10 @@ Append an entry to `publications.yaml`:
 
 ## Pages
 
-- `/` — Home (hero, about, research areas, recent news)
+- `/` — Home (hero photo, about, research areas, recent news)
 - `/news/` — News list + individual posts
-- `/people/` — Team by role
-- `/publications/` — Filterable sample publication list
+- `/people/` — Team by role (with photos)
+- `/publications/` — Filterable publication list
 - `/contact/` — Contact details
 
-This is a **structure + samples** release: sample people, news, and publications only. Expand the content files over time without changing the app code.
+Content was migrated from the previous WordPress site at [c2e.ece.ust.hk/main](http://c2e.ece.ust.hk/main/).

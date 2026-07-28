@@ -1,63 +1,1195 @@
-- id: j77
-  authors: "Y.Y. Bi, V.K.N. Lau, and D.H.K. Tsang"
-  title: "Model-driven Bayesian Reinforcement Learning for IRS-assisted Massive MIMO-OFDM Channel Feedback, Beamforming, and IRS Control"
-  venue: "IEEE Transactions on Wireless Communications"
+- id: c51
+  authors: 'T.L.Zhou , J. Zhang, and D.H.K. Tsang'
+  title: 'Mode Connectivity in Federated Learning with Data Heterogeneity'
+  venue: 'ASN Asilomar Conference, Pacific Grove, CA'
   year: 2024
-  type: journal
-  fields: [wireless, cloud-edge]
+  type: conference
+  fields: []
 
-- id: j74
-  authors: "X. He, D.H.K. Tsang, and Y.Z. Chen"
-  title: "Long-Term Carbon-Efficient Planning for Geographical Shiftable Resources: A Monte Carlo Tree Search Approach"
-  venue: "IEEE Transactions on Power Systems"
-  year: 2024
-  type: journal
-  fields: [smart-grids, online-algorithms]
 
-- id: j73
-  authors: "T.L. Zhou, J. Zhang, and D.H.K. Tsang"
-  title: "FedFA: Federated Learning with Feature Anchors to Align Features and Classifiers for Heterogeneous Data"
-  venue: "IEEE Transactions on Mobile Computing"
+- id: c52
+  authors: 'T.X. Liang , S. Gupta, F.C.Y. Chiu, and D.H.K. Tsang'
+  title: 'On the Enhancement of RF-DC Rectification Efficiency Via Bias Voltage'
+  venue: 'IEEE WPTCE, Kyoto, Japan'
+  year: 2024
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c53
+  authors: 'Y. Cao , H. Nourmohammadi, B. Sun , X.Q. Tan , and D.H.K. Tsang'
+  title: 'Online Conversion under Unknown Horizon: Beating 1 + \ln \theta with a Single Trusted Query'
+  venue: 'SIGMETRICS Workshop on Learning-augmented Algorithms: Theory and Applications (LATA), Venice, Italy'
+  year: 2024
+  type: conference
+  fields: [online-algorithms]
+
+
+- id: c54
+  authors: 'X. He , H.L. Wen, Y.F. Zhang, Y.Z. Chen, and D.H.K. Tsang'
+  title: 'Fast Unit Commitment Constraint Screening with Learning-Based Cost Model'
+  venue: 'IEEE SmartGridComm, Oslo, Norway'
+  year: 2024
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c55
+  authors: 'W.H. Xue , Y.L. Yuan , and D.H.K. Tsang'
+  title: 'Enhancing Fog Computing through Intelligent Reflecting Surface Assistance: A Lyapunov Driven Reinforcement Learning Approach'
+  venue: 'IEEE World Forum on Internet of Things, Montreal, Canada'
+  year: 2024
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: c56
+  authors: 'Z.Y. Li , Y. Cui, and D.H.K. Tsang'
+  title: 'AMP-based Joint Activity Detection and Channel Estimation for OFDM-based Grant-Free Access'
+  venue: 'IEEE Globecom Workshop, Cape Town, South Africa'
+  year: 2024
+  type: conference
+  fields: [wireless]
+
+
+- id: j63
+  authors: 'W.H. Xu , J.D. Yu , Y. Wu , and D.H.K. Tsang'
+  title: 'Energy-Latency Aware Intelligent Reflecting Surface Aided Multi-cell Mobile Edge Computing'
+  venue: 'IEEE Transactions on Green Communications and Networking'
   year: 2024
   type: journal
-  fields: [cloud-edge, online-algorithms]
+  fields: [wireless]
+
+
+- id: j64
+  authors: 'J.D. Yu , A.Alhilal, T.L. Zhou , P. Hui, and D.H.K. Tsang'
+  title: 'Attention-based QoE-aware Digital Twin Empowered Edge Computing for Immersive Virtual Reality'
+  venue: 'IEEE Transactions on Wireless Communications, accepted for publication'
+  year: 2024
+  type: journal
+  fields: [cloud-edge, wireless]
+
+
+- id: j65
+  authors: 'W.T. Ma, Y. Cao , D.H.K. Tsang , and D. Xia'
+  title: 'Optimal Regularized Online Allocation by Adaptive Re-solving'
+  venue: 'Operation Research, accepted for publication'
+  year: 2024
+  type: journal
+  fields: [online-algorithms]
+
+
+- id: j66
+  authors: 'S. Wang and D.H.K. Tsang'
+  title: 'A Dynamic Data Trading Marketplace with Externalities'
+  venue: 'IEEE Internet of Things Journal'
+  year: 2024
+  type: journal
+  fields: []
+
 
 - id: j67
-  authors: "W.H. Xu, J.D. Yu, Y. Wu, and D.H.K. Tsang"
-  title: "Joint Channel Estimation and Reinforcement-based Resource Allocation of Intelligent Reflecting Surface-aided Multicell Mobile Edge Computing"
-  venue: "IEEE Internet of Things Journal"
+  authors: 'W.H. Xu , J.D. Yu , Y. Wu , and D.H.K. Tsang'
+  title: 'Joint Channel Estimation and Reinforcement-based Resource Allocation of Intelligent Reflecting Surface-aided Multicell Mobile Edge Computing'
+  venue: 'IEEE Internet of Things Journal'
   year: 2024
   type: journal
-  fields: [wireless, cloud-edge]
+  fields: [wireless]
 
-- id: j41
-  authors: "B. Sun, A. Zeynali, T.X. Li, M. Hajiesmali, A. Wierman, and D.H.K. Tsang"
-  title: "Competitive Algorithms for the Online Multiple Knapsack Problem with Application to Electric Vehicle Charging"
-  venue: "Proceedings of the ACM on Measurement and Analysis of Computing Systems"
-  year: 2020
+
+- id: j68
+  authors: 'C.Y. Xia , D.H.K. Tsang , and V.K.N. Lau'
+  title: 'Structured Bayesian Federated Learning for Green AI: A Decentralized Model Compression Using Turbo-VBI Based Approach'
+  venue: 'IEEE Internet of Things Journal'
+  year: 2024
   type: journal
+  fields: [cloud-edge]
+
+
+- id: j70
+  authors: 'J.D. Yu , A.Alhilal, P. Hui, and D.H.K. Tsang'
+  title: 'Bi-directional Digital Twin and Edge Computing in the Metaverse'
+  venue: 'IEEE Internet of Things Magazine'
+  year: 2024
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j71
+  authors: 'T.L. Zhou , Z.H. Lin, J. Zhang, and D.H.K. Tsang'
+  title: 'Understanding and Improving Model Averaging in Federated Learning on Heterogeneous Data'
+  venue: 'IEEE Transactions on Mobile Computing, accepted for publication'
+  year: 2024
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j72
+  authors: 'W.J. Liu , S.P. Shen, D.H.K. Tsang , R.K. Mallik, and R. D. Murch'
+  title: 'An Efficient Ratio Detector for Ambient Backscatter Communications'
+  venue: 'IEEE Transactions on Wireless Communications'
+  year: 2024
+  type: journal
+  fields: [wireless]
+
+
+- id: j73
+  authors: 'T.L. Zhou , J. Zhang, and D.H.K. Tsang'
+  title: 'FedFA: Federated Learning with Feature Anchors to Align Features and Classifiers for Heterogeneous Data'
+  venue: 'IEEE Transactions on Mobile Computing'
+  year: 2024
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j74
+  authors: 'X. He , D.H.K. Tsang , and Y.Z. Chen'
+  title: 'Long-Term Carbon-Efficient Planning for Geographical Shiftable Resources: A Monte Carlo Tree Search Approach'
+  venue: 'IEEE Transactions on Power Systems, accepted for publication'
+  year: 2024
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j75
+  authors: 'Y.L. Yuan , D.H.K. Tsang , and V.K.N. Lau'
+  title: 'Combining Conjugate Gradient and Momentum for Unconstrained Stochastic Optimization with Applications to Machine Learning'
+  venue: 'IEEE Internet of Things Journal'
+  year: 2024
+  type: journal
+  fields: []
+
+
+- id: j76
+  authors: 'J.D. Yu , A.Alhilal, T.L. Zhou , P. Hui, and D.H.K. Tsang'
+  title: 'Attention-based QoE-aware Digital Twin Empowered Edge Computing for Immersive Virtual Reality'
+  venue: 'IEEE Transactions on Wireless Communications'
+  year: 2024
+  type: journal
+  fields: []
+
+
+- id: j77
+  authors: 'Y.Y. Bi , V.K.N. Lau, and D.H.K. Tsang'
+  title: 'Model-driven Bayesian Reinforcement Learning for IRS-assisted Massive MIMO-OFDM Channel Feedback, Beamforming, and IRS Control'
+  venue: 'IEEE Transactions on Wireless Communications, accepted for publication'
+  year: 2024
+  type: journal
+  fields: [wireless]
+
+
+- id: c42
+  authors: 'B. Sun , L. Yang, M. Hajiesmali, A. Wierman, J.C.S. Lui, D. Towsley, and D.H.K. Tsang'
+  title: 'The Online Multiple Knapsack Problem with Departures'
+  venue: 'ACM Sigmetrics, Orlando, FL'
+  year: 2023
+  type: conference
+  fields: [online-algorithms]
+
+
+- id: c43
+  authors: 'J.D. Yu , Y. Li, X.L. Liu , B. Sun , Y. Wu , and D.H.K. Tsang'
+  title: 'Energy Efficient IRS-Assisted NOMA Aided Mobile Edge Computing via Heterogeneous Multi-Agent Reinforcement Learning'
+  venue: 'IEEE ICC, Rome, Italy'
+  year: 2023
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: c44
+  authors: 'W.J. Liu , S.P. Shen, C. Zhang, D.H.K. Tsang , and R. Murch'
+  title: 'Optimal Antenna Selection and Time Sharing in RF-powered Cognitive Networks with Backscatter Communications'
+  venue: 'IEEE VTC, Florence, Italy'
+  year: 2023
+  type: conference
+  fields: [wireless]
+
+
+- id: c45
+  authors: 'W.H. Chan , B.S.B. Fung , D.H.K. Tsang , and I.M.C. Lo'
+  title: 'Automating algae classification using deep learning by StyleGAN2-ADA-augmented images of rare freshwater algae'
+  venue: 'The 18th IWA Leading Edge Conference on Water and Wastewater Technologies, Daegu, South Korea'
+  year: 2023
+  type: conference
+  fields: []
+
+
+- id: c46
+  authors: 'B. Sun , L. Yang, M. Hajiesmali, A. Wierman, J.C.S. Lui, D. Towsley, and D.H.K. Tsang'
+  title: 'The Online Knapsack Problem with Departures'
+  venue: 'ACM Sigmetrics, Orlando, FL'
+  year: 2023
+  type: conference
+  fields: []
+
+
+- id: c47
+  authors: 'W.J. Liu , S.P. Shen, C. Zhang, D.H.K. Tsang , and R. Murch'
+  title: 'Optimal Antenna Selection and Time Sharing in RF-powered Cognitive Networks with Backscatter Communications'
+  venue: 'IEEE VTC, Florence, Italy'
+  year: 2023
+  type: conference
+  fields: []
+
+
+- id: c48
+  authors: 'Y.H. Mau , D.H.K. Tsang , and K.O. Ng'
+  title: 'Unit Commitment Optimization of Gas-fired Generation at Black Point Power Station Incorporating the Efficiency, Flexibility, Reliability & Cost'
+  venue: 'Global Power and Propulsion Society (GPSS), Hong Kong'
+  year: 2023
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c49
+  authors: 'Y. Cao , S.Y. Yu, X.Q. Tan , and D.H.K. Tsang'
+  title: 'Competitive Online Path-Aware Path Selection'
+  venue: 'IFIP Performance, Chicago, USA'
+  year: 2023
+  type: conference
+  fields: [online-algorithms]
+
+
+- id: c50
+  authors: 'J.D. Yu , A.Alhilal, T.L.Zhou , P. Hui, and D.H.K. Tsang'
+  title: 'QoE Optimization for VR Streaming: a Continual RL Framework in Digital Twin-empowered MEC'
+  venue: 'IEEE Globecom, Kuala Lumpur, Malaysia'
+  year: 2023
+  type: conference
+  fields: []
+
+
+- id: j54
+  authors: 'C.Y. Xia , D.H.K. Tsang , V.K.N. Lau'
+  title: 'Structured Bayesian Compression for Deep Neural Networks Based on the Turbo VBI Approach'
+  venue: 'IEEE Transactions on Signal Processing'
+  year: 2023
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j55
+  authors: 'Y. Cao , B. Sun , and D.H.K. Tsang'
+  title: 'Online Network Utility Maximization: Algorithm, Competitive Analysis, and Applications'
+  venue: 'IEEE Transactions on Control of Network Systems'
+  year: 2023
+  type: journal
+  fields: [online-algorithms]
+
+
+- id: j56
+  authors: 'X.L. Liu , J.D. Yu , Y.W. Liu, Y. Gao, T. Mahmoodi, S. Lambotharan, and D.H.K. Tsang'
+  title: 'Distributed Intelligence in Wireless Networks'
+  venue: 'IEEE Open Journal of the Communications Society'
+  year: 2023
+  type: journal
+  fields: [cloud-edge, wireless]
+
+
+- id: j57
+  authors: 'L. Ni , B. Sun , X. Tan , and D.H.K. Tsang'
+  title: 'Mobility and Energy Management in Electric Vehicle Based Mobility-on-Demand Systems: Models and Solutions'
+  venue: 'IEEE Transactions on Intelligent Transportation Systems'
+  year: 2023
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j58
+  authors: 'S. Wang , B. Sun , L. Ni , S.H. Low, and D.H.K. Tsang'
+  title: 'Financial Incentives for Energy Resource Investments in Stochastic Economic Dispatch'
+  venue: 'IEEE Transactions on Sustainable Energy'
+  year: 2023
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j59
+  authors: 'J.D. Yu , Y. Li, X.L. Liu , B. Sun , Y. Wu , D.H.K. Tsang'
+  title: 'IRS Assisted NOMA Aided Mobile Edge Computing with Queue Stability: Heterogeneous Multi-Agent Reinforcement Learning'
+  venue: 'IEEE Transactions on Wireless Communications'
+  year: 2023
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j60
+  authors: 'B.S.B. Fung , W.H. Chan , I.M.C. Lo, and D.H.K. Tsang'
+  title: 'Freshwater Microscopic Algae Detection Based on Deep Neural Networks with GAN-based Augmentation for Imbalanced Algal Data'
+  venue: 'ACS ES&T Water'
+  year: 2023
+  type: journal
+  fields: []
+
+
+- id: j61
+  authors: 'W.H. Chan , B.S.B. Fung , D.H.K. Tsang , and I.M.C. Lo'
+  title: 'A Freshwater Algae Classification System Based on Machine Learning with StyleGAN2-ADA Augmentation for Limited and Imbalanced Datasets'
+  venue: 'Elsevier Water Research'
+  year: 2023
+  type: journal
+  fields: []
+
+
+- id: j62
+  authors: 'W.J. Liu , S.P. Shen, D.H.K. Tsang , and R. D. Murch'
+  title: 'MIMO Ambient Backscatter Communications: Capacity Maximization and Beamforming Optimization'
+  venue: 'IEEE Transactions on Vehicular Technology'
+  year: 2023
+  type: journal
+  fields: [wireless]
+
+
+- id: j45
+  authors: 'L. Liu , B. Sun , X.Q. Tan , and D.H.K. Tsang'
+  title: 'Energy-efficient Resource Allocation and Sub-channel Assignment for NOMA-enabled Multi-access Edge Computing'
+  venue: 'IEEE Systems Journal'
+  year: 2022
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j48
+  authors: 'L. Ni , B. Sun , S. Wang , and D.H.K. Tsang'
+  title: 'Dynamic Pricing Mechanism Design for Electric Mobility-on-Demand Systems'
+  venue: 'IEEE Transactions on Intelligent Transportation Systems'
+  year: 2022
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j51
+  authors: 'Y.X. Jiang , Q. Ye, B. Sun , Y. Wu , and D.H.K. Tsang'
+  title: 'Data-Driven Coordinated Charging for Electric Vehicles with Continuous Charging Rates: A Deep Policy Gradient Approach'
+  venue: 'IEEE Internet of Things Journal'
+  year: 2022
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j52
+  authors: 'B. Sun , Y.X. Jiang , Y. Wu , Q. Ye, and D.H.K. Tsang'
+  title: 'Performance Analysis of Mobile Cloud Computing with Bursty Demand: A Tandem Queue Model'
+  venue: 'IEEE Transactions on Vehicular Technology'
+  year: 2022
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j53
+  authors: 'B. Sun , L. Yang, M. Hajiesmali, A. Wierman, J.C.S. Lui, D. Towsley, and D.H.K. Tsang'
+  title: 'The Online Multiple Knapsack Problem with Departures'
+  venue: 'Proceedings of the ACM on Measurement and Analysis of Computing Systems'
+  year: 2022
+  type: journal
+  fields: []
+
+
+- id: c40
+  authors: 'B. Sun , A. Zeynali , T.X. Li, M. Hajiesmali, A. Wierman, and D.H.K. Tsang'
+  title: 'Competitive Algorithms for the Online Multiple Knapsack Problem with Application to Electric Vehicle Charging'
+  venue: 'ACM Sigmetrics, Beijing'
+  year: 2021
+  type: conference
+  fields: [online-algorithms]
+
+
+- id: c41
+  authors: 'B. Sun , R. Lee, M. Hajiesmali, A. Wierman, and D.H.K. Tsang'
+  title: 'Pareto-Optimal Learning-Augmented Algorithms for Online Conversion Problems'
+  venue: 'NeurIPS'
+  year: 2021
+  type: conference
+  fields: [online-algorithms]
+
+
+- id: j43
+  authors: 'S. Wang , X.Q. Tan , T. Liu , and D. H. K. Tsang'
+  title: 'Aggregation of Demand-Side Flexibility in Electricity Markets: Negative Impact Analysis and Mitigation Method ,'
+  venue: 'IEEE Transactions on Smart Grid'
+  year: 2021
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j44
+  authors: 'Y.X. Jiang , B. Sun , and D.H.K. Tsang'
+  title: 'Not Taken for Granted: Configuring Scalable Live Video Streaming Under Throughput Fluctuations in Mobile Edge Networks'
+  venue: 'IEEE Transactions on Vehicular Technology'
+  year: 2021
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j46
+  authors: 'L. Liu , B. Sun , Y. Wu , and D.H.K. Tsang'
+  title: 'Latency Optimization for Computation Offloading with Hybrid NOMA-OMA Transmission'
+  venue: 'IEEE Internet of Things Journal'
+  year: 2021
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j47
+  authors: 'L. Ni , B. Sun , X.Q. Tan , and D. H. K. Tsang'
+  title: 'Inventory Planning and Real-time Routing for Network of Electric Vehicle Battery Swapping Stations ,'
+  venue: 'IEEE Transactions on Transportation and Electrification'
+  year: 2021
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j49
+  authors: 'W.J. Liu , S.P. Shen, D.H.K. Tsang , R. D. Murch'
+  title: 'Enhancing Ambient Backscatter Communication Utilizing Coherent and Non-Coherent Space-Time Codes'
+  venue: 'IEEE Transactions on Wireless Communications'
+  year: 2021
+  type: journal
+  fields: [wireless]
+
+
+- id: j50
+  authors: 'S. Wang , B. Sun , X.Q. Tan , and D.H.K. Tsang'
+  title: 'Real-time Coordination of Transmission and Distribution Networks via Nash Bargaining Solution'
+  venue: 'IEEE Transactions on Sustainable Energy'
+  year: 2021
+  type: journal
+  fields: [smart-grids]
+
+
+- id: c33
+  authors: 'L. Liu , B. Sun , Y. Wu , and D. H. K. Tsang'
+  title: 'Latency Minimization for Computation Offloading with Hybrid Multiple Access Methods ,'
+  venue: 'in Proceedings of International Conference on Computing, Networking and Communications (ICNC), Big Island, Hawaii, USA'
+  year: 2020
+  type: conference
+  fields: [wireless]
+
+
+- id: c34
+  authors: 'X. Tan , B. Sun , A. Leon-Garcia, Y. Wu , and D.H.K. Tsang'
+  title: 'Mechanism Design for Online Resource Allocation: A Unified Approach ,'
+  venue: 'in Proceedings of ACM International Conference on Measurement and Modeling of Computer Systems (ACM Sigmetrics), Boston, USA'
+  year: 2020
+  type: conference
+  fields: [online-algorithms]
+
+
+- id: c35
+  authors: 'B. Sun , T. Li, S.H. Low, and D.H.K. Tsang'
+  title: 'ORC: An Online Competitive Algorithm for Recommendation and Charging Schedule in Electric Vehicle Charging Network ,'
+  venue: 'in Proceedings of ACM International Conference on Future Energy Systems (ACM e-Energy), Melbourne, Australia'
+  year: 2020
+  type: conference
   fields: [smart-grids, online-algorithms]
 
-- id: c27
-  authors: "L. Ni, B. Sun, X. Tan, and D.H.K. Tsang"
-  title: "Online Price-based Vehicle-to-Station Recommendations for EV Battery Swapping"
-  venue: "IEEE SmartGridComm"
+
+- id: c36
+  authors: 'Y. Cao , B. Sun , and D.H.K. Tsang'
+  title: 'Delay-Aware Scheduling over mmWave/Sub-6 Dual Interfaces: A Reinforcement Learning Approach ,'
+  venue: 'accepted in Workshop on 5G LTE and Intelligent Communications, IEEE International Conference on Communications (IEEE ICC), Ireland'
+  year: 2020
+  type: conference
+  fields: [wireless]
+
+
+- id: c37
+  authors: 'S. Cao , S. Wang , L. Ni , and D. H. K. Tsang'
+  title: 'Voltage/Var Control using Electric Springs in Distribution Networks ,'
+  venue: 'in Proceedings of IEEE PES Innovative Smart Grid Technologies Europe (ISGT-Europe), The Hague, NL'
+  year: 2020
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c38
+  authors: 'B. Sun , Y. Jiang , and D.H.K. Tsang'
+  title: 'When Burstable Instances Meet Mobile Computing: Performance Modeling and Economic Analysis ,'
+  venue: 'in Proceedings of IEEE International Conference on Distributed Computing Systems (IEEE ICDCS), Poster, Singapore'
+  year: 2020
+  type: conference
+  fields: [cloud-edge, wireless]
+
+
+- id: c39
+  authors: 'Y. Cao , B. Sun , and D.H.K. Tsang'
+  title: 'Optimal Algorithms for One-Way Trading and Online Knapsack Problems: A Unified Competitive Analysis'
+  venue: 'IEEE Conference on Decision and Control (CDC), Jeju Island, Korea'
+  year: 2020
+  type: conference
+  fields: [online-algorithms]
+
+
+- id: j36
+  authors: 'L. Qian, B. Shi, Y. Wu , B. Sun and D.H.K. Tsang'
+  title: 'NOMA-Enabled Mobile Edge Computing for Internet of Things via Joint Communication and Computation Resource Allocations ,'
+  venue: 'IEEE Internet of Things Journal'
+  year: 2020
+  type: journal
+  fields: [wireless]
+
+
+- id: j37
+  authors: 'X.Q. Tan , A. Leon-Garcia, Y. Wu , and D.H.K. Tsang'
+  title: 'Posted-Price Retailing of Transactive Energy: An Optimal Online Mechanism without Prediction'
+  venue: 'IEEE Journal on Selected Areas in Communications (JSAC) Special Issue on Communications and Data Analytics in Smart Grid'
+  year: 2020
+  type: journal
+  fields: [online-algorithms]
+
+
+- id: j38
+  authors: 'X.Q. Tan , A. Leon-Garcia, Y. Wu , and D.H.K. Tsang'
+  title: 'Online Combinatorial Auctions for Resource Allocation with Supply Costs and Capacity Limits'
+  venue: 'IEEE Journal on Selected Areas in Communications (JSAC) Special Issue on Smart Data Pricing for Next Generation Networks'
+  year: 2020
+  type: journal
+  fields: [online-algorithms]
+
+
+- id: j39
+  authors: 'Y.X Jiang , Z. Huang , and D.H.K. Tsang'
+  title: 'On Power-Peak-Aware Scheduling for Large-Scale Shared Clusters'
+  venue: 'IEEE Transactions on Big Data'
+  year: 2020
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j40
+  authors: 'X.Q. Tan , B. Sun , A. Leon-Garcia, Y. Wu , and D.H.K. Tsang'
+  title: 'Mechanism Design for Online Resource Allocation: A Unified Approach'
+  venue: 'Proceedings of the ACM on Measurement and Analysis of Computing Systems'
+  year: 2020
+  type: journal
+  fields: []
+
+
+- id: j41
+  authors: 'B. Sun , A. Zeynali , T.X. Li, M. Hajiesmali, A. Wierman, and D.H.K. Tsang'
+  title: 'Competitive Algorithms for the Online Multiple Knapsack Problem with Application to Electric Vehicle Charging'
+  venue: 'Proceedings of the ACM on Measurement and Analysis of Computing Systems'
+  year: 2020
+  type: journal
+  fields: []
+
+
+- id: j42
+  authors: 'Y.X. Jiang , M. Shahrad, D. Wentzlaff, D. H. K. Tsang , and C. Joe-Wong'
+  title: 'Burstable Instances for Clouds: Performance Modeling, Equilibrium Analysis, and Revenue Maximization ,'
+  venue: 'IEEE Transactions on Networking'
+  year: 2020
+  type: journal
+  fields: []
+
+
+- id: c28
+  authors: 'Y. Jiang , M. Shahrad, D. Wentzlaff, D.H.K. Tsang , and C. Joe-Wong'
+  title: 'Burstable Instances for Clouds: Performance Modeling, Equilibrium Analysis, and Revenue Maximization'
+  venue: 'in Proceedings of the 38th IEEE International Conference on Computer Communications (INFOCOM), Paris, France'
+  year: 2019
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: c29
+  authors: 'Y. Xiao and D.H.K. Tsang'
+  title: 'Interference Alignment Beamforming and Power Allocation for Cognitive MIMO-NOMA Downlink Networks ,'
+  venue: 'in Proceedings of the IEEE Wireless Communication Network Conference (WCNC), Marrakech, Morocco'
+  year: 2019
+  type: conference
+  fields: [wireless]
+
+
+- id: c30
+  authors: 'L. Liu , B. Sun , X. Tan , Y. S. Xiao , and D. H. K. Tsang'
+  title: 'Energy-efficient resource allocation and channel assignment for NOMA-based mobile edge computing ,'
+  venue: 'in Proceedings of IEEE Wireless Communications and Networking Conference (WCNC), Marrakech, Morocco'
+  year: 2019
+  type: conference
+  fields: [wireless]
+
+
+- id: c31
+  authors: 'X. Tan , A. Leon-Garcia, B. Sun , and D.H.K. Tsang'
+  title: 'A Novel Online Mechanism for Demand-Side Flexibility Management under Arbitrary Arrivals'
+  venue: 'in Proceedings of ACM International Conference on Future Energy Systems (ACM e-Energy), Phoenix, USA'
+  year: 2019
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c32
+  authors: 'X. Tan , A. Leon-Garcia, and D.H.K. Tsang'
+  title: 'Optimal Posted Prices for Online Resource Allocation with Supply Costs and Capacity Limits'
+  venue: 'ACM Sigmetric Workshop on MAMA, Phoenix'
+  year: 2019
+  type: conference
+  fields: []
+
+
+- id: j31
+  authors: 'T. Liu , B. Sun , and D.H.K. Tsang'
+  title: 'Rank-one Solutions for SDP Relaxation of QCQPs in Power Systems'
+  venue: 'IEEE Transactions on Smart Grid'
+  year: 2019
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j32
+  authors: 'X.Q. Tan , G. Qu, B. Sun , N. Li, and D.H.K. Tsang'
+  title: 'Optimal Scheduling of Battery Charging Station Serving Electric Vehicles Based on Battery Swapping'
+  venue: 'IEEE Transactions on Smart Grid'
+  year: 2019
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j33
+  authors: 'L.P. Qian, Y. Wu , B. Ji, L. Huang, and D.H.K. Tsang'
+  title: 'HybridIoT: Integration of Hierarchical Multiple Access and Computation Offloading for IoT-based Smart Cities'
+  venue: 'IEEE Network'
+  year: 2019
+  type: journal
+  fields: []
+
+
+- id: j34
+  authors: 'B. Sun , X.Q. Tan , and D.H.K. Tsang'
+  title: 'Eliciting Multi-dimensional Flexibilities from Electric Vehicles: A Mechanism Design Approach'
+  venue: 'IEEE Transactions on Power Systems'
+  year: 2019
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j35
+  authors: 'B. Sun , X. Sun, and D.H.K. Tsang , and W. Whitt'
+  title: 'Optimal Battery Purchasing and Charging at Electric Vehicle Battery Swap Stations ,'
+  venue: 'European Journal of Operational Research'
+  year: 2019
+  type: journal
+  fields: [smart-grids]
+
+
+- id: c26
+  authors: 'A. Zhang , B. Sun , T. Liu , X. Tan , S. Wang , and D.H.K. Tsang'
+  title: 'Joint Voltage and Frequency Regulation by EV Charging Scheduling in the Distribution Network'
+  venue: 'in Proceedings of the 9th IEEE PES Conference on Innovative Smart Grid Technology (ISGT 2018), Washington, DC, USA'
   year: 2018
   type: conference
   fields: [smart-grids]
 
-- id: j36
-  authors: "L. Qian, B. Shi, Y. Wu, B. Sun and D.H.K. Tsang"
-  title: "NOMA-Enabled Mobile Edge Computing for Internet of Things via Joint Communication and Computation Resource Allocations"
-  venue: "IEEE Internet of Things Journal"
-  year: 2020
-  type: journal
-  fields: [wireless, cloud-edge]
 
-- id: j55
-  authors: "Y. Cao, B. Sun, and D.H.K. Tsang"
-  title: "Online Network Utility Maximization: Algorithm, Competitive Analysis, and Applications"
-  venue: "IEEE Transactions on Control of Network Systems"
-  year: 2023
+- id: c27
+  authors: 'L. Ni , B. Sun , X. Tan , and D.H.K. Tsang'
+  title: 'Online Price-based Vehicle-to-Station Recommendations for EV Battery Swapping'
+  venue: 'in Proceedings of the IEEE International Conference on Communications, Control, and Computing Technologies for Smart Grids (SmartGridComm), Aalborg, Denmark'
+  year: 2018
+  type: conference
+  fields: [smart-grids]
+
+
+- id: j16
+  authors: 'T. Liu , X.Q. Tan , Y. Wu and D.H.K. Tsang'
+  title: 'Energy Management of Cooperative Microgrids: A Distributed Optimization Approach'
+  venue: 'International Journal of Electrical Power Energy Systems'
+  year: 2018
   type: journal
-  fields: [online-algorithms, cloud-edge]
+  fields: [smart-grids]
+
+
+- id: j17
+  authors: 'B. Sun , Z. Huang , X.Q. Tan , and D.H.K. Tsang'
+  title: 'Optimal Scheduling for Electric Vehicle Charging with Discrete Charging Levels in Distribution Grid'
+  venue: 'IEEE Transactions on Smart Grid'
+  year: 2018
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j18
+  authors: 'V.K. Tumuluru and D.H.K. Tsang'
+  title: 'A Two-stage Approach for Network Constrained Unit Commitment Problem with Demand Response'
+  venue: 'IEEE Transactions on Smart Grid'
+  year: 2018
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j19
+  authors: 'R. Yu, J. Ding , S. Maharjan, S. Gjessing, Y. Zhang, and D.H.K. Tsang'
+  title: 'Decentralized and Optimal Resource Cooperation in Geo-distributed Mobile Cloud Computing'
+  venue: 'IEEE Transactions on Emerging Topics in Computing'
+  year: 2018
+  type: journal
+  fields: []
+
+
+- id: j20
+  authors: 'Y.X Jiang , Z. Huang , and D.H.K. Tsang'
+  title: 'Towards Max-Min Fair Resource Allocation for Stream Big Data Analytics in Shared Clouds'
+  venue: 'IEEE Transactions on Big Data'
+  year: 2018
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j21
+  authors: 'W. Li , X.Q. Tan , B. Sun , and D.H.K. Tsang'
+  title: 'Optimal Power Dispatch of a Centralized Electric Vehicle Battery Charging Station with Renewables'
+  venue: 'IET Communications'
+  year: 2018
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j22
+  authors: 'X.Q. Tan , B. Sun , Y. Wu and D.H.K. Tsang'
+  title: 'Asymptotic Performance Evaluation of Battery Swapping and Charging Station for Electric Vehicles'
+  venue: 'Performance Evaluation'
+  year: 2018
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j23
+  authors: 'Y. Wu , L. Qian, H. Mao, X. Yang, H. Zhou, X.Q. Tan , and D.H.K. Tsang'
+  title: 'Secrecy-Driven Resource Management for Vehicular Computation-Ofﬂoading Networks'
+  venue: 'IEEE Network'
+  year: 2018
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j24
+  authors: 'Y. Jiang , Z. Huang , and D.H.K. Tsang'
+  title: 'Challenges and Solutions in Fog Computing Orchestration'
+  venue: 'IEEE Network'
+  year: 2018
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j25
+  authors: 'S. Agheb , X.Q. Tan , B. Sun , and D.H.K. Tsang'
+  title: 'Contract Design for Aggregating, Trading, and Distributing Reserves in Demand-side Frequency Regulation'
+  venue: 'IEEE Transactions on Industrial Informatics'
+  year: 2018
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j26
+  authors: 'N. Omidvar , A. Liu, V. Lau, F. Zhang, D.H.K. Tsang , and M.R. Pakravan'
+  title: 'Optimal Hierarchical Radio Resource Management for HetNets with Flexible Backhaul'
+  venue: 'IEEE Transactions on Wireless Communications'
+  year: 2018
+  type: journal
+  fields: []
+
+
+- id: j28
+  authors: 'B. Sun , X.Q. Tan , and D.H.K. Tsang'
+  title: 'Optimal Charging Operation of Battery Swapping and Charging Stations with QoS Guarantee'
+  venue: 'IEEE Transactions on Smart Grid'
+  year: 2018
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j29
+  authors: 'Y.X. Jiang , and D.H.K. Tsang'
+  title: 'Delay-Aware Task Offloading in Shared Fog Networks'
+  venue: 'IEEE Internet of Things Journal'
+  year: 2018
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j30
+  authors: 'Y. Wu , K. Ni, C. Zhang, L.P. Qian, and D.H.K. Tsang'
+  title: 'NOMA Assisted Multi-Access Mobile Edge Computing: A Joint Optimization of Computation Offloading and Time Allocation'
+  venue: 'IEEE Transactions on Vehicular Technology'
+  year: 2018
+  type: journal
+  fields: []
+
+
+- id: c23
+  authors: 'B. Sun , and D.H.K. Tsang'
+  title: 'Performance Analysis of Dynamic Wireless Charging System for Electric Vehicles: A Queueing Approach'
+  venue: 'in Proceedings of the Eighth International Conference on Future Energy Systems (ACM e-Energy), Hong Kong'
+  year: 2017
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c24
+  authors: 'T. Liu , B. Sun , X. Tan , and D.H.K. Tsang'
+  title: 'Market for Multi-Dimensional Flexibility with Parametric Demand Response Bidding'
+  venue: 'in Proceedings of the 49th North American Power Symposium, Morgantown, WV, USA'
+  year: 2017
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c25
+  authors: 'S. Wang , B. Sun , T. Liu , X. Tan , and D.H.K. Tsang'
+  title: 'Real-time Market-based Coordination Mechanism for Transmission and Distribution Networks'
+  venue: 'in Proceedings of the 8th IEEE International Conference on Smart Grid Communications (SmartGridComm), Dresden, Germany'
+  year: 2017
+  type: conference
+  fields: [smart-grids]
+
+
+- id: j14
+  authors: 'X.Q. Tan , Y. Wu , and D.H.K. Tsang'
+  title: 'A Stochastic Shortest Path Framework for Quantifying the Value and Lifetime of Battery Energy Storage under Dynamic Pricing'
+  venue: 'IEEE Transactions on Smart Grid'
+  year: 2017
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j15
+  authors: 'S. Maharjan, Y. Zhang, S. Gjessing, and D.H.K. Tsang'
+  title: 'User-Centric Demand Response Management in Smart Grid with Multiple Providers'
+  venue: ''
+  year: 2017
+  type: journal
+  fields: []
+
+
+- id: c20
+  authors: 'S. Agheb , X. Tan , B. Sun , and D.H.K. Tsang'
+  title: 'Robust Provisioning of Demand-Side Flexibility Under Electricity Price Uncertainty'
+  venue: 'in Proceedings of 2016 IEEE International Conference on Industrial Technology (ICIT), Taiwan'
+  year: 2016
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c21
+  authors: 'K. Zhang, Y. Mao, S. Leng, Y. Zhang, S. Gjessing, and D.H.K. Tsang'
+  title: 'Platoon-based Electric Vechicles Charging with Renewable Energy Supply: A Queueing Analytical Model'
+  venue: 'in Proceedings of 2016 IEEE International Conference on Communications (ICC), Kuala Lumpur'
+  year: 2016
+  type: conference
+  fields: []
+
+
+- id: c22
+  authors: 'Z. Huang , B. Balasubramanian, M. Wang, T. Lan, M. Chiang, and D.H.K. Tsang'
+  title: 'RUSH: A RobUst ScHeduler to Manage Uncertain Completion-Times in Shared Clouds'
+  venue: 'in Proceedings of the 36th IEEE International Conference on Distributed Computing Systems (ICDCS), Nara, Japan'
+  year: 2016
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: j10
+  authors: 'S. Niafar , X.Q. Tan , and D.H.K. Tsang'
+  title: 'Optimal Downlink Scheduling for Heterogeneous Traffic in LTE-A Based on MDP and Chance-Constrained Approaches'
+  venue: 'ACM Springer Mobile Networks and Applications (MONET) Journal'
+  year: 2016
+  type: journal
+  fields: [wireless]
+
+
+- id: j11
+  authors: 'X.Q. Tan , Y. Wu , and D.H.K. Tsang'
+  title: 'Pareto Optimal Operation of Distributed Battery Energy Storage Systems for Energy Arbitrage under Dynamic Pricing'
+  venue: 'IEEE Transactions on Parallel and Distributed Systems'
+  year: 2016
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j12
+  authors: 'Z. Huang , and D.H.K. Tsang'
+  title: 'M-convex VM Consolidation: Towards a Better VM Workload Consolidation'
+  venue: 'IEEE Transactions on Cloud Computing'
+  year: 2016
+  type: journal
+  fields: [cloud-edge]
+
+
+- id: j13
+  authors: 'W. Zhong , R. Yu, S. Xie, Y. Zhang, and D.H.K. Tsang'
+  title: 'Software Defined Networking for Flexible and Green Energy Internet'
+  venue: 'IEEE Communications Magazine'
+  year: 2016
+  type: journal
+  fields: []
+
+
+- id: c11
+  authors: 'Y. Jiang , Z. Huang , and D.H.K. Tsang'
+  title: 'Do You Feel the Lag of Your Hadoop?'
+  venue: 'in Proceedings of the 1st IEEE International Conference on Big Data Computing Service and Applications (BigDataService), Redwood City, CA'
+  year: 2015
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: c12
+  authors: 'Y. Wu , X. Tan , L. Qian, and D.H.K. Tsang'
+  title: 'Optimal Management of Local Energy Trading in Future Smart Microgrid via Pricing'
+  venue: 'IEEE INFOCOM Workshop, Smart Data Pricing'
+  year: 2015
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c13
+  authors: 'Z. Huang , B. Balasubramanian, M. Wang, T. Lan, M. Chiang, and D.H.K. Tsang'
+  title: 'Need for Speed: CORA Scheduler for Optimizing Completion-Times in the Cloud'
+  venue: 'in Proceedings of the IEEE International Conference on Computer Communications (INFOCOM), Hong Kong'
+  year: 2015
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: c14
+  authors: 'X. Tan , Y. Wu , and D.H.K. Tsang'
+  title: 'A Monotonic Optimization based Optimal Discrete Charging Protocol for Electric Vehicles with Multilevel Charging Rates'
+  venue: '[invited paper], the 27th Chinese Control and Decision Conference (CCDC), Qingdao, China'
+  year: 2015
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c15
+  authors: 'N. Omidvar , A. Liu, V.K.N. Lau, F. Zhang, D.H.K. Tsang , and M.R. Pakravan'
+  title: 'Two-Timescale QoS-Aware Cross-Layer Optimisation for HetNets with Flexible Backhaul'
+  venue: 'in Proceedings of IEEE 26th International Symposium on Personal Indoor and Mobile Radio Communications (PIMRC), Hong Kong'
+  year: 2015
+  type: conference
+  fields: [wireless]
+
+
+- id: c16
+  authors: 'S. Agheb , X. Tan , and D.H.K. Tsang'
+  title: 'Model Predictive Control of Integrated Room Automation Considering Occupants Preference'
+  venue: 'in Proceedings of the 6th IEEE International Conference on Smart Grid Communications (IEEE SmartGridComm 2015)'
+  year: 2015
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c17
+  authors: 'W. Li , X. Tan , and D.H.K. Tsang'
+  title: 'Smart Home Energy Management Systems Based on Non-Intrusive Load Monitoring'
+  venue: 'in Proceedings of the 6th IEEE International Conference on Smart Grid Communications (IEEE SmartGridComm 2015)'
+  year: 2015
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c18
+  authors: 'T. Liu , X. Tan , B. Sun , Y. Wu , X. Guan, and D.H.K. Tsang'
+  title: 'Energy Management of Cooperative Microgrids with P2P Energy Sharing in Distribution Networks'
+  venue: 'in Proceedings of the 6th IEEE International Conference on Smart Grid Communications (IEEE SmartGridComm 2015)'
+  year: 2015
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c19
+  authors: 'N. Omidvar , A. Liu, V.K.N. Lau, F. Zhang, D.H.K. Tsang , and M.R. Pakravan'
+  title: 'Two-Timescale Radio Resource Management for Heterogeneous Networks with Flexible Backhaul'
+  venue: 'in Proceedings of the 26th IEEE Global Communications Conference (GLOBECOM), San Diego'
+  year: 2015
+  type: conference
+  fields: [wireless]
+
+
+- id: j7
+  authors: 'N. Omidvar , and D.H.K. Tsang , M.R. Pakravan, and V.K.N. Lau'
+  title: 'Efficient Energy-Aware Routing with Redundancy Elimination'
+  venue: 'IEEE Journal on Selected Areas in Communications'
+  year: 2015
+  type: journal
+  fields: []
+
+
+- id: j8
+  authors: 'J. Ding , R. Yu, Y. Zhang, S. Gjessing, and D.H.K. Tsang'
+  title: 'Service Providers Competition and Cooperation in Cloud-based Software Defined Wireless Networks'
+  venue: 'IEEE Communications Magazine'
+  year: 2015
+  type: journal
+  fields: []
+
+
+- id: j9
+  authors: 'Y. Wu , X.Q. Tan , L. Qian, D.H.K. Tsang , W. Song, and L. Yu'
+  title: 'Optimal Pricing and Energy Scheduling for Hybrid Energy Trading Market in Future Smart Grid'
+  venue: 'IEEE Transactions on Industrial Informatics'
+  year: 2015
+  type: journal
+  fields: [smart-grids]
+
+
+- id: c10
+  authors: 'X. Tan , B. Sun , and D.H.K. Tsang'
+  title: 'Queueing Network Models for EV Charging Station with Battery Swapping'
+  venue: 'in Proceedings of the 5th IEEE International Conference on Smart Grid Communications (IEEE SmartGridComm 2014), Nov'
+  year: 2014
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c6
+  authors: 'Y. Wu , X. Sun, X. Tan , L. Meng, L. Yu, W. Song, and D.H.K. Tsang'
+  title: 'Cooperative Distributed Energy Generation and Energy Trading for Future Smart Grid'
+  venue: 'China Control Conference, Nanjing, China'
+  year: 2014
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c7
+  authors: 'S. Niafar , X. Tan , and D.H.K. Tsang'
+  title: 'The Optimal User Scheduling for LTE-A Downlink with Heterogeneous Traffic Types'
+  venue: '[invited paper], in Proceedings of the 10th International Conference on Heterogeneous Networking for Quality, Reliability, Security and Robustness (Qshine 2014), Rhodes, Greece'
+  year: 2014
+  type: conference
+  fields: [wireless]
+
+
+- id: c8
+  authors: 'B. Sun , X. Tan , and D.H.K. Tsang'
+  title: 'Optimal Charging Operation of Battery Swapping Stations with QoS Guarantee'
+  venue: 'in Proceedings of the 5th IEEE International Conference on Smart Grid Communications (IEEE SmartGridComm 2014), Nov'
+  year: 2014
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c9
+  authors: 'X. Tan , Y. Wu , and D.H.K. Tsang'
+  title: 'Optimal Energy Trading with Battery Energy Storage under Dynamic Pricing'
+  venue: 'in Proceedings of the 5th IEEE International Conference on Smart Grid Communications (IEEE SmartGridComm 2014), Nov'
+  year: 2014
+  type: conference
+  fields: [smart-grids]
+
+
+- id: j1
+  authors: 'V. K. Tumuluru , Z. Huang , and D.H.K. Tsang'
+  title: 'Unit commitment problem: A new formulation and solution method'
+  venue: 'International Journal of Electrical Power & Energy Systems'
+  year: 2014
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j2
+  authors: 'S. Niafar , Z. Huang , and D.H.K. Tsang'
+  title: 'An Optimal Standard-Compliant MIMO Scheduler for LTE Downlink'
+  venue: 'IEEE Transactions on Wireless Communications'
+  year: 2014
+  type: journal
+  fields: [wireless]
+
+
+- id: j3
+  authors: 'Y. Wu , V.K.N. Lau, D.H.K. Tsang , L. Qian, and L. Meng'
+  title: 'Optimal Energy Scheduling for Residential Smart Grid with Centralized Renewable Energy Source'
+  venue: 'IEEE Systems Journal'
+  year: 2014
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j4
+  authors: 'V. K. Tumuluru , Z. Huang , and D.H.K. Tsang'
+  title: 'Integrating Price Responsive Demand Into the Unit Commitment Problem'
+  venue: 'IEEE Transcations on Smart Grid'
+  year: 2014
+  type: journal
+  fields: [smart-grids]
+
+
+- id: j5
+  authors: 'Y. Wu , Q. Zhu, J. Huang, and D.H.K. Tsang'
+  title: 'Revenue Sharing based Resource Allocation for Dynamic Spectrum Access Networks'
+  venue: 'IEEE Journal on Selected Areas in Communications (JSAC)'
+  year: 2014
+  type: journal
+  fields: [wireless]
+
+
+- id: j6
+  authors: 'T. Zhang , and D.H.K. Tsang'
+  title: 'Cooperative Sensing Scheduling for Energy-Efficient Cognitive Radio Networks'
+  venue: 'IEEE Transactions on Vehicular Technology'
+  year: 2014
+  type: journal
+  fields: [wireless]
+
+
+- id: c3
+  authors: 'L. Chen , T. Zhang , and D.H.K. Tsang'
+  title: 'Salt: Sensing Enabled Localization and Tracking for Geolocation Database in TV White Space'
+  venue: 'in Proceedings of the 9th IEEE International Wireless Communications and Mobile Computing Conference (IWCMC)'
+  year: 2013
+  type: conference
+  fields: [wireless]
+
+
+- id: c4
+  authors: 'X. Tan , Y. Wu , and D.H.K. Tsang'
+  title: 'Economic Analysis of Lifetime-Constrained Battery Storage under Dynamic Pricing'
+  venue: 'in Proceedings of the 4th IEEE International Conference on Smart Grid Communications (IEEE SmartGridComm 2013), Oct'
+  year: 2013
+  type: conference
+  fields: [smart-grids]
+
+
+- id: c5
+  authors: 'L. Chen , S. Hu, K. Chen, H. Wu, and D.H.K. Tsang'
+  title: 'Towards Minimal-Delay Deadline-Driven Data Center TCP'
+  venue: 'in the Proceedings of the Twelfth ACM Workshop on Hot Topics in Networks (HotNets)'
+  year: 2013
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: c1
+  authors: 'Z. Huang , and D.H.K. Tsang'
+  title: 'SLA guaranteed virtual machine consolidation for computing clouds'
+  venue: 'in Proceedings of the IEEE International Conference on Communications (ICC), 2012'
+  year: 2012
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: c2
+  authors: 'Z. Huang , and D.H.K. Tsang , J. She'
+  title: 'A virtual machine consolidation framework for MapReduce enabled computing clouds'
+  venue: 'in Proceedings of the 24th International Teletraffic Congress (ITC 24), 2012'
+  year: 2012
+  type: conference
+  fields: [cloud-edge]
+
+
+- id: j27
+  authors: 'X. Zhu , X. Gong, and D.H.K. Tsang'
+  title: 'The Optimal Macro Control Strategies of Service Providers and Micro Service Selection of Users: Quantification Model Based on Synergetics'
+  venue: 'Springer Wireless Networks'
+  year: 1991
+  type: journal
+  fields: []
+
+
+- id: j69
+  authors: 'C.Y. Xia , H.Y. Guo, H.Y. Ma, D.H.K. Tsang , and V.K.N. Lau'
+  title: 'Multi-resolution Model Compression for Deep Neural Networks: A Variational Bayesian Approach'
+  venue: 'IEEE Transactions on Signal Processing'
+  year: 1944
+  type: journal
+  fields: [cloud-edge]

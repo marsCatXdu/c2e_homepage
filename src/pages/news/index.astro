@@ -14,7 +14,7 @@ const news = (await getCollection('news')).sort(
     <p class="text-xs font-semibold uppercase tracking-[0.15em] text-teal">News</p>
     <h1 class="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">Group updates</h1>
     <p class="mt-4 max-w-2xl text-muted">
-      Gatherings, visits, and milestones. Add a new Markdown file under <code class="text-sm">src/content/news/</code> to publish.
+      Gatherings, visits, openings, and milestones from the C2E group.
     </p>
     <div class="mt-12">
       {
@@ -24,6 +24,7 @@ const news = (await getCollection('news')).sort(
             date={item.data.date}
             summary={item.data.summary}
             href={`${base}news/${item.id}/`}
+            image={item.data.image}
           />
         ))
       }
