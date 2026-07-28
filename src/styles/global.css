@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "DM Sans", "Segoe UI", sans-serif;
+
+  --color-ink: #0b1c2c;
+  --color-ink-soft: #1a3348;
+  --color-teal: #0d7377;
+  --color-teal-bright: #14919b;
+  --color-teal-muted: #e6f3f3;
+  --color-surface: #ffffff;
+  --color-canvas: #f5f8fa;
+  --color-line: #d7e0e6;
+  --color-muted: #5c6f80;
+  --color-body: #243847;
+
+  --animate-fade-up: fade-up 0.7s ease-out both;
+  --animate-fade-in: fade-in 0.8s ease-out both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-body);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-teal-muted);
+  color: var(--color-ink);
+}
+
+.prose-c2e {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.prose-c2e p + p {
+  margin-top: 1rem;
+}

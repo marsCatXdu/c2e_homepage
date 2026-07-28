@@ -1,0 +1,10 @@
+{
+  "remote.autoForwardPorts": true,
+  "remote.portsAttributes": {
+    "4321": {
+      "label": "C2E Homepage (Astro)",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "simpleBrowser.focusLockIndicator.enabled": true
+}

@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PersonCard from '../../components/PersonCard.astro';
+import { getCollection, render } from 'astro:content';
+
+const people = await getCollection('people');
+const byRole = (role: string) =>
+  people
+    .filter((p) => p.data.role === role)
+    .sort((a, b) => a.data.order - b.data.order || a.data.name.localeCompare(b.data.name));
+
+const sections = [
+  { role: 'faculty', label: 'Faculty' },
+  { role: 'staff', label: 'Research Staff' },
+  { role: 'student', label: 'Students' },
+  { role: 'alumni', label: 'Alumni' },
+] as const;
+
+const rendered = await Promise.all(
+  people.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  }),
+);
+const contentMap = Object.fromEntries(rendered.map(({ entry, Content }) => [entry.id, Content]));
+---
+
+<BaseLayout title="People" description="Faculty, students, and alumni of the C2E research group.">
+  <div class="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.15em] text-teal">People</p>
+    <h1 class="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">Our team</h1>
+    <p class="mt-4 max-w-2xl text-muted">
+      Sample profiles for the new site. Add or edit Markdown files in <code class="text-sm">src/content/people/</code>.
+    </p>
+
+    {
+      sections.map((section) => {
+        const members = byRole(section.role);
+        if (members.length === 0) return null;
+        return (
+          <section class="mt-16">
+            <h2 class="border-b border-line pb-3 font-display text-2xl font-semibold text-ink">
+              {section.label}
+            </h2>
+            <div>
+              {members.map((person) => {
+                const Content = contentMap[person.id];
+                return (
+                  <PersonCard
+                    name={person.data.name}
+                    title={person.data.title}
+                    email={person.data.email}
+                    website={person.data.website}
+                  >
+                    <Content />
+                  </PersonCard>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })
+    }
+  </div>
+</BaseLayout>

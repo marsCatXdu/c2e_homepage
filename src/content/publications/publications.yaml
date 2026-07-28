@@ -1,0 +1,63 @@
+- id: j77
+  authors: "Y.Y. Bi, V.K.N. Lau, and D.H.K. Tsang"
+  title: "Model-driven Bayesian Reinforcement Learning for IRS-assisted Massive MIMO-OFDM Channel Feedback, Beamforming, and IRS Control"
+  venue: "IEEE Transactions on Wireless Communications"
+  year: 2024
+  type: journal
+  fields: [wireless, cloud-edge]
+
+- id: j74
+  authors: "X. He, D.H.K. Tsang, and Y.Z. Chen"
+  title: "Long-Term Carbon-Efficient Planning for Geographical Shiftable Resources: A Monte Carlo Tree Search Approach"
+  venue: "IEEE Transactions on Power Systems"
+  year: 2024
+  type: journal
+  fields: [smart-grids, online-algorithms]
+
+- id: j73
+  authors: "T.L. Zhou, J. Zhang, and D.H.K. Tsang"
+  title: "FedFA: Federated Learning with Feature Anchors to Align Features and Classifiers for Heterogeneous Data"
+  venue: "IEEE Transactions on Mobile Computing"
+  year: 2024
+  type: journal
+  fields: [cloud-edge, online-algorithms]
+
+- id: j67
+  authors: "W.H. Xu, J.D. Yu, Y. Wu, and D.H.K. Tsang"
+  title: "Joint Channel Estimation and Reinforcement-based Resource Allocation of Intelligent Reflecting Surface-aided Multicell Mobile Edge Computing"
+  venue: "IEEE Internet of Things Journal"
+  year: 2024
+  type: journal
+  fields: [wireless, cloud-edge]
+
+- id: j41
+  authors: "B. Sun, A. Zeynali, T.X. Li, M. Hajiesmali, A. Wierman, and D.H.K. Tsang"
+  title: "Competitive Algorithms for the Online Multiple Knapsack Problem with Application to Electric Vehicle Charging"
+  venue: "Proceedings of the ACM on Measurement and Analysis of Computing Systems"
+  year: 2020
+  type: journal
+  fields: [smart-grids, online-algorithms]
+
+- id: c27
+  authors: "L. Ni, B. Sun, X. Tan, and D.H.K. Tsang"
+  title: "Online Price-based Vehicle-to-Station Recommendations for EV Battery Swapping"
+  venue: "IEEE SmartGridComm"
+  year: 2018
+  type: conference
+  fields: [smart-grids]
+
+- id: j36
+  authors: "L. Qian, B. Shi, Y. Wu, B. Sun and D.H.K. Tsang"
+  title: "NOMA-Enabled Mobile Edge Computing for Internet of Things via Joint Communication and Computation Resource Allocations"
+  venue: "IEEE Internet of Things Journal"
+  year: 2020
+  type: journal
+  fields: [wireless, cloud-edge]
+
+- id: j55
+  authors: "Y. Cao, B. Sun, and D.H.K. Tsang"
+  title: "Online Network Utility Maximization: Algorithm, Competitive Analysis, and Applications"
+  venue: "IEEE Transactions on Control of Network Systems"
+  year: 2023
+  type: journal
+  fields: [online-algorithms, cloud-edge]

@@ -1,0 +1,35 @@
+{
+  "name": "C2E Group",
+  "shortName": "C2E",
+  "affiliation": "Department of Electronic and Computer Engineering, HKUST",
+  "tagline": "Computing, Communications, and Energy System Optimization",
+  "headline": "Committed to Optimizing Networked Systems",
+  "description": "We enhance the performance of engineering systems through mathematical modeling and optimization — from cloud and edge computing to wireless networks and smart energy systems.",
+  "email": "eetsang@ece.ust.hk",
+  "pi": {
+    "name": "Prof. Danny H.K. Tsang",
+    "title": "Professor, IEEE Fellow, HKIE Fellow"
+  },
+  "researchAreas": [
+    {
+      "id": "smart-grids",
+      "title": "Smart Grids",
+      "summary": "EV charging, renewable energy management, frequency regulation, and pricing in power networks."
+    },
+    {
+      "id": "cloud-edge",
+      "title": "Cloud / Edge Computing",
+      "summary": "Resource management, offloading, and performance optimization for cloud and mobile edge systems."
+    },
+    {
+      "id": "wireless",
+      "title": "Wireless Communications",
+      "summary": "NOMA, IRS-assisted MEC, and next-generation wireless networking."
+    },
+    {
+      "id": "online-algorithms",
+      "title": "Online Algorithm Design",
+      "summary": "Competitive algorithms and mechanism design for resource allocation under uncertainty."
+    }
+  ]
+}

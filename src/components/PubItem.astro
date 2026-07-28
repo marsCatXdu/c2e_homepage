@@ -1,0 +1,55 @@
+---
+interface Props {
+  authors: string;
+  title: string;
+  venue: string;
+  year: number;
+  type: string;
+  fields: string[];
+  url?: string;
+}
+
+const { authors, title, venue, year, type, fields, url } = Astro.props;
+
+const fieldLabels: Record<string, string> = {
+  'smart-grids': 'Smart Grids',
+  'cloud-edge': 'Cloud / Edge',
+  wireless: 'Wireless',
+  'online-algorithms': 'Online Algorithms',
+};
+---
+
+<li
+  class="pub-item border-b border-line py-5"
+  data-type={type}
+  data-fields={fields.join(',')}
+  data-year={year}
+>
+  <p class="text-sm text-muted">
+    {authors}
+  </p>
+  <h3 class="mt-1 font-medium leading-snug text-ink">
+    {
+      url ? (
+        <a href={url} class="hover:text-teal" target="_blank" rel="noopener noreferrer">
+          {title}
+        </a>
+      ) : (
+        title
+      )
+    }
+  </h3>
+  <p class="mt-2 text-sm text-muted">
+    <span class="italic">{venue}</span>, {year}
+  </p>
+  <div class="mt-2 flex flex-wrap gap-2">
+    <span class="rounded bg-canvas px-2 py-0.5 text-xs font-medium capitalize text-muted">{type}</span>
+    {
+      fields.map((f) => (
+        <span class="rounded bg-teal-muted px-2 py-0.5 text-xs font-medium text-teal">
+          {fieldLabels[f] ?? f}
+        </span>
+      ))
+    }
+  </div>
+</li>
