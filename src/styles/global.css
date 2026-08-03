@@ -313,3 +313,14 @@ body {
   }
 }
 
+/* Explicit rgba — Tailwind theme opacity stops often fail on Android Chromium */
+.hero-mask {
+  background: linear-gradient(
+    to top,
+    rgba(11, 28, 44, 0.94) 0%,
+    rgba(11, 28, 44, 0.78) 38%,
+    rgba(11, 28, 44, 0.45) 68%,
+    rgba(11, 28, 44, 0.28) 100%
+  );
+}
+
