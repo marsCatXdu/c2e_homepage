@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsCard from '../components/NewsCard.astro';
 import { getCollection } from 'astro:content';
-import { getLocaleFromUrl, localizePath, type Locale } from '../i18n/locales';
+import { getLocaleFromUrl, localizePath, withBase, type Locale } from '../i18n/locales';
 import { getSite } from '../i18n/site';
 import { fill, t } from '../i18n/ui';
 
@@ -14,9 +14,7 @@ const news = (await getCollection('news'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3);
 
-const heroSrc = site.heroImage
-  ? `${base}${site.heroImage.replace(/^\//, '')}`
-  : undefined;
+const heroSrc = site.heroImage ? withBase(site.heroImage) : undefined;
 ---
 
 <BaseLayout>
@@ -101,9 +99,7 @@ const heroSrc = site.heroImage
       <ul class="mt-8 grid list-none gap-4 p-0 sm:grid-cols-2">
         {
           site.researchAreas.map((area) => {
-            const img = area.image
-              ? `${base}${area.image.replace(/^\//, '')}`
-              : undefined;
+            const img = area.image ? withBase(area.image) : undefined;
             const href = `${localizePath(locale, '/publications/', base)}?field=${area.id}`;
             return (
               <li>

@@ -25,6 +25,15 @@ export function stripLocaleFromPath(pathname: string, baseUrl: string): string {
   return path;
 }
 
+/** Join site base with a root-relative asset path (`/images/...`). */
+export function withBase(path: string, baseUrl = import.meta.env.BASE_URL): string {
+  if (!path || path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  const base = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  return `${base}${path.replace(/^\//, '')}`;
+}
+
 export function localizePath(locale: Locale, path: string, baseUrl: string): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   const clean = normalized === '/' ? '' : normalized.replace(/\/?$/, '/');

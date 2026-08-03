@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { render, type CollectionEntry } from 'astro:content';
-import { getLocaleFromUrl, localizePath, type Locale } from '../i18n/locales';
+import { getLocaleFromUrl, localizePath, withBase, type Locale } from '../i18n/locales';
 import { dateLocale } from '../i18n/site';
 import { t } from '../i18n/ui';
 
@@ -18,11 +18,7 @@ const formatted = entry.data.date.toLocaleDateString(dateLocale(locale), {
   month: 'long',
   day: 'numeric',
 });
-const imageSrc = entry.data.image
-  ? entry.data.image.startsWith('http')
-    ? entry.data.image
-    : `${base}${entry.data.image.replace(/^\//, '')}`
-  : undefined;
+const imageSrc = entry.data.image ? withBase(entry.data.image) : undefined;
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.summary}>

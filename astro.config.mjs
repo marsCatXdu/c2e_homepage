@@ -2,8 +2,9 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// Local preview uses "/". GitHub Pages / CI should set BASE_PATH=/c2e_homepage
-const base = process.env.BASE_PATH ?? '/';
+// Local preview uses "/". GitHub Pages / CI should set BASE_PATH=/c2e_homepage/
+const rawBase = process.env.BASE_PATH ?? '/';
+const base = rawBase === '/' ? '/' : `/${rawBase.replace(/^\/+|\/+$/g, '')}/`;
 
 // https://astro.build/config
 export default defineConfig({

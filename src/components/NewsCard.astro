@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../i18n/locales';
+
 interface Props {
   title: string;
   date: Date;
@@ -9,17 +11,12 @@ interface Props {
 }
 
 const { title, date, summary, href, image, locale = 'en' } = Astro.props;
-const base = import.meta.env.BASE_URL;
 const formatted = date.toLocaleDateString(locale === 'zh-cn' ? 'zh-CN' : 'en-US', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
 });
-const imageSrc = image
-  ? image.startsWith('http')
-    ? image
-    : `${base}${image.replace(/^\//, '')}`
-  : undefined;
+const imageSrc = image ? withBase(image) : undefined;
 ---
 
 <article class="group border-b border-line py-6 last:border-b-0">

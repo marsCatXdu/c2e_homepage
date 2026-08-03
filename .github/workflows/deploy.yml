@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          BASE_PATH: /c2e_homepage
+          BASE_PATH: /c2e_homepage/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
