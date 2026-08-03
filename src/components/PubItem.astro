@@ -1,4 +1,7 @@
 ---
+import type { Locale } from '../i18n/locales';
+import { t } from '../i18n/ui';
+
 interface Props {
   authors: string;
   title: string;
@@ -7,16 +10,25 @@ interface Props {
   type: string;
   fields: string[];
   url?: string;
+  locale?: Locale;
 }
 
-const { authors, title, venue, year, type, fields, url } = Astro.props;
+const { authors, title, venue, year, type, fields, url, locale = 'en' } = Astro.props;
 
 const fieldLabels: Record<string, string> = {
-  'smart-grids': 'Smart Grids',
-  'cloud-edge': 'Cloud / Edge',
-  wireless: 'Wireless',
-  'online-algorithms': 'Online Algorithms',
+  'smart-grids': t(locale, 'pubs.smartGrids'),
+  'cloud-edge': t(locale, 'pubs.cloudEdge'),
+  wireless: t(locale, 'pubs.wireless'),
+  'online-algorithms': t(locale, 'pubs.onlineAlgorithms'),
 };
+
+const typeLabel =
+  type === 'journal' ? t(locale, 'pubs.journal') : type === 'conference' ? t(locale, 'pubs.conference') : type;
+
+const doi =
+  url && url.includes('doi.org/')
+    ? url.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '')
+    : undefined;
 ---
 
 <li
@@ -31,7 +43,7 @@ const fieldLabels: Record<string, string> = {
   <h3 class="mt-1 font-medium leading-snug text-ink">
     {
       url ? (
-        <a href={url} class="hover:text-teal" target="_blank" rel="noopener noreferrer">
+        <a href={url} class="pub-title-link" target="_blank" rel="noopener noreferrer">
           {title}
         </a>
       ) : (
@@ -41,9 +53,29 @@ const fieldLabels: Record<string, string> = {
   </h3>
   <p class="mt-2 text-sm text-muted">
     <span class="italic">{venue}</span>, {year}
+    {
+      doi && (
+        <>
+          {' · '}
+          <a href={url} class="pub-doi-link" target="_blank" rel="noopener noreferrer">
+            {t(locale, 'pubs.doi')}
+          </a>
+        </>
+      )
+    }
+    {
+      url && !doi && (
+        <>
+          {' · '}
+          <a href={url} class="pub-doi-link" target="_blank" rel="noopener noreferrer">
+            {t(locale, 'pubs.link')}
+          </a>
+        </>
+      )
+    }
   </p>
   <div class="mt-2 flex flex-wrap gap-2">
-    <span class="rounded bg-canvas px-2 py-0.5 text-xs font-medium capitalize text-muted">{type}</span>
+    <span class="rounded bg-canvas px-2 py-0.5 text-xs font-medium text-muted">{typeLabel}</span>
     {
       fields.map((f) => (
         <span class="rounded bg-teal-muted px-2 py-0.5 text-xs font-medium text-teal">
@@ -53,3 +85,33 @@ const fieldLabels: Record<string, string> = {
     }
   </div>
 </li>
+
+<style>
+  .pub-title-link {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition:
+      color 0.2s ease,
+      text-decoration-color 0.2s ease;
+  }
+
+  .pub-title-link:hover,
+  .pub-title-link:focus-visible {
+    color: var(--color-teal);
+    text-decoration-color: var(--color-teal);
+  }
+
+  .pub-doi-link {
+    font-weight: 500;
+    color: var(--color-teal);
+    text-decoration: none;
+  }
+
+  .pub-doi-link:hover,
+  .pub-doi-link:focus-visible {
+    text-decoration: underline;
+  }
+</style>

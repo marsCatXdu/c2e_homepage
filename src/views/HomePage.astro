@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import { getCollection } from 'astro:content';
+import { getLocaleFromUrl, localizePath, type Locale } from '../i18n/locales';
+import { getSite } from '../i18n/site';
+import { fill, t } from '../i18n/ui';
+
+const base = import.meta.env.BASE_URL;
+const locale: Locale = Astro.currentLocale === 'zh-cn' ? 'zh-cn' : getLocaleFromUrl(Astro.url, base);
+const site = getSite(locale);
+
+const news = (await getCollection('news'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const heroSrc = site.heroImage
+  ? `${base}${site.heroImage.replace(/^\//, '')}`
+  : undefined;
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="relative min-h-[88vh] overflow-hidden bg-ink text-white">
+    {
+      heroSrc && (
+        <img
+          src={heroSrc}
+          alt={t(locale, 'home.heroAlt')}
+          class="absolute inset-0 h-full w-full object-cover animate-[fade-in_1.2s_ease-out_both]"
+        />
+      )
+    }
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 to-ink/35"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28 md:px-8 md:pb-24">
+      <p
+        class="max-w-5xl animate-[fade-up_0.7s_ease-out_both] font-display text-2xl font-semibold leading-snug tracking-tight text-white text-balance md:text-3xl lg:text-[2.15rem]"
+      >
+        {
+          locale === 'zh-cn'
+            ? `${site.tagline}（${site.shortName}）实验室`
+            : `${site.tagline} (${site.shortName}) Lab`
+        }
+      </p>
+      <h1
+        class="mt-4 max-w-4xl animate-[fade-up_0.7s_ease-out_0.1s_both] text-base font-medium leading-snug text-white/90 text-balance md:text-xl"
+      >
+        {site.headline} - {t(locale, 'home.ledBy')} Prof. {site.pi.shortName ?? site.pi.name} · HKUST-GZ
+      </h1>
+      <p
+        class="mt-4 max-w-xl animate-[fade-up_0.7s_ease-out_0.2s_both] text-base leading-relaxed text-white/80 md:text-lg"
+      >
+        {site.description}
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3 animate-[fade-up_0.7s_ease-out_0.3s_both]">
+        <a
+          href={localizePath(locale, '/people/', base)}
+          class="rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-teal-muted"
+        >
+          {t(locale, 'home.meet')}
+        </a>
+        <a
+          href={localizePath(locale, '/contact/', base)}
+          class="rounded-md border border-white/35 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+        >
+          {t(locale, 'home.contact')}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="border-b border-line bg-surface">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-20 md:grid-cols-[1fr_1.2fr] md:px-8">
+      <div>
+        <h2 class="font-display text-3xl font-semibold text-ink md:text-4xl">
+          {t(locale, 'home.aboutTitle')}
+        </h2>
+      </div>
+      <div class="prose-c2e text-base text-body">
+        <p>
+          {fill(t(locale, 'home.aboutP1'), { pi: site.pi.name, affiliation: site.affiliation })}
+        </p>
+        <p>
+          {t(locale, 'home.aboutP2')}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research areas -->
+  <section class="bg-canvas">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:px-8">
+      <h2 class="max-w-xl font-display text-3xl font-semibold text-ink md:text-4xl">
+        {t(locale, 'home.focusTitle')}
+      </h2>
+      <ul class="mt-8 grid list-none gap-4 p-0 sm:grid-cols-2">
+        {
+          site.researchAreas.map((area) => {
+            const img = area.image
+              ? `${base}${area.image.replace(/^\//, '')}`
+              : undefined;
+            const href = `${localizePath(locale, '/publications/', base)}?field=${area.id}`;
+            return (
+              <li>
+                <a
+                  href={href}
+                  class="group flex h-full overflow-hidden rounded-lg border border-line bg-surface transition hover:border-teal/40 hover:shadow-sm"
+                >
+                  {img && (
+                    <div
+                      class="relative w-[40%] shrink-0 self-stretch overflow-hidden"
+                      aria-hidden="true"
+                    >
+                      <img
+                        src={img}
+                        alt=""
+                        class="absolute inset-0 h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                      <span class="absolute inset-y-0 right-0 w-2/3 bg-gradient-to-r from-transparent to-surface" />
+                    </div>
+                  )}
+                  <div class="flex min-w-0 flex-1 flex-col px-4 py-4 sm:px-5 sm:py-5">
+                    <h3 class="font-display text-lg font-semibold leading-snug text-ink transition group-hover:text-teal">
+                      {area.title}
+                    </h3>
+                    <p class="mt-2 flex-1 text-sm leading-relaxed text-muted">{area.summary}</p>
+                    <span class="mt-3 text-sm font-medium text-teal">
+                      {t(locale, 'home.relatedPubs')}
+                      <span class="inline-block transition group-hover:translate-x-0.5"> →</span>
+                    </span>
+                  </div>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Unified architecture -->
+  <section class="arch-section relative overflow-hidden border-y border-line bg-surface">
+    <div
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_0%,rgba(13,115,119,0.08),transparent_45%),radial-gradient(ellipse_at_90%_100%,rgba(11,28,44,0.06),transparent_50%)]"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
+      <div class="max-w-2xl">
+        <h2 class="font-display text-3xl font-semibold text-ink md:text-4xl">
+          {site.architecture.title}
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-muted md:text-lg">
+          {site.architecture.summary}
+        </p>
+      </div>
+
+      <div class="arch-stack mt-12 md:mt-14">
+        <div class="arch-spine" aria-hidden="true">
+          <span class="arch-spine-line"></span>
+          <span class="arch-spine-label">{t(locale, 'arch.optimization')}</span>
+        </div>
+
+        <ol class="arch-layers m-0 list-none p-0">
+          {
+            site.architecture.layers.map((layer, i) => (
+              <li class="arch-layer" style={`--i: ${i}`}>
+                <a
+                  href={`${localizePath(locale, '/publications/', base)}?field=${layer.id}`}
+                  class="arch-layer-link group"
+                >
+                  <span class="arch-role">{layer.role}</span>
+                  <span class="arch-layer-body">
+                    <span class="arch-layer-title">{layer.title}</span>
+                    <span class="arch-layer-blurb">{layer.blurb}</span>
+                  </span>
+                  <span class="arch-layer-arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+
+        <p class="arch-outcome">
+          <span class="arch-outcome-mark" aria-hidden="true"></span>
+          {t(locale, 'arch.outcome')}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent news -->
+  <section class="bg-surface">
+    <div class="mx-auto max-w-6xl px-5 py-20 md:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 class="font-display text-3xl font-semibold text-ink md:text-4xl">{t(locale, 'home.newsTitle')}</h2>
+        </div>
+        <a href={localizePath(locale, '/news/', base)} class="text-sm font-medium text-teal hover:underline">
+          {t(locale, 'home.viewAllNews')}
+        </a>
+      </div>
+      <div class="mt-10">
+        {
+          news.map((item) => (
+            <NewsCard
+              title={item.data.title}
+              date={item.data.date}
+              summary={item.data.summary}
+              href={localizePath(locale, `/news/${item.id}/`, base)}
+              image={item.data.image}
+              locale={locale}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

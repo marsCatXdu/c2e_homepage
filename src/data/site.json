@@ -1,21 +1,24 @@
 {
-  "name": "C2E Group",
+  "name": "Computing, Communications, and Energy System Optimization Lab",
   "shortName": "C2E",
-  "affiliation": "Department of Electronic and Computer Engineering, HKUST",
+  "affiliation": "Internet of Things Thrust, Information Hub, HKUST-GZ",
+  "campus": "The Hong Kong University of Science and Technology (Guangzhou)",
+  "location": "Guangzhou, Guangdong, China",
   "tagline": "Computing, Communications, and Energy System Optimization",
   "headline": "Committed to Optimizing Networked Systems",
   "description": "We enhance the performance of engineering systems through mathematical modeling and optimization \u2014 from cloud and edge computing to wireless networks and smart energy systems.",
-  "email": "eetsang@ece.ust.hk",
+  "email": "eetsang@ust.hk",
   "pi": {
     "name": "Prof. Danny H.K. Tsang",
+    "shortName": "Danny Tsang",
     "title": "Professor, IEEE Fellow, HKIE Fellow"
   },
   "researchAreas": [
     {
-      "id": "smart-grids",
-      "title": "Smart Grids",
-      "summary": "EV charging, renewable energy management, frequency regulation, and pricing in power networks.",
-      "image": "/images/research/smart-grids.png"
+      "id": "wireless",
+      "title": "Wireless Communications",
+      "summary": "Next-generation wireless networking, IRS-assisted MEC, wireless power transfer, antenna design, NOMA, Wi-Fi networking, etc.",
+      "image": "/images/research/wireless.jpg"
     },
     {
       "id": "cloud-edge",
@@ -24,17 +27,86 @@
       "image": "/images/research/cloud-edge.jpg"
     },
     {
-      "id": "wireless",
-      "title": "Wireless Communications",
-      "summary": "NOMA, IRS-assisted MEC, and next-generation wireless networking.",
-      "image": "/images/research/wireless.jpg"
-    },
-    {
       "id": "online-algorithms",
       "title": "Online Algorithm Design",
       "summary": "Competitive algorithms and mechanism design for resource allocation under uncertainty.",
-      "image": "/images/research/cloud-edge.jpg"
+      "image": "/images/research/online-algorithms.jpg"
+    },
+    {
+      "id": "smart-grids",
+      "title": "Smart Grids",
+      "summary": "EV charging, renewable energy management, frequency regulation, and pricing in power networks.",
+      "image": "/images/research/smart-grids.jpg"
     }
   ],
-  "heroImage": "/images/hero/group-gathering-2024.jpg"
+  "architecture": {
+    "title": "One unified target — a smarter, cleaner world",
+    "summary": "Our four focus areas are layers of one system: energy as infrastructure, wireless as the connective fabric, cloud and edge as the compute plane, and online algorithms as the decision layer that steers them together.",
+    "layers": [
+      {
+        "id": "online-algorithms",
+        "role": "Decision",
+        "title": "Online Algorithm Design",
+        "blurb": "Optimize under uncertainty across the stack."
+      },
+      {
+        "id": "cloud-edge",
+        "role": "Compute",
+        "title": "Cloud / Edge Computing",
+        "blurb": "Place intelligence where latency and energy allow."
+      },
+      {
+        "id": "wireless",
+        "role": "Connect",
+        "title": "Wireless Communications",
+        "blurb": "Move information — and, increasingly, power — through the air."
+      },
+      {
+        "id": "smart-grids",
+        "role": "Power",
+        "title": "Smart Grids",
+        "blurb": "The energy foundation that makes networked systems sustainable."
+      }
+    ]
+  },
+  "heroImage": "/images/hero/group-gathering-2024.jpg",
+  "projects": [
+    {
+      "title": "Industrial Multi-Gateway Wi-Fi Mesh Traffic-Steering Platform",
+      "summary": "This project developed an OpenWrt-based multi-gateway Wi-Fi mesh platform for industrial environments where wired backhaul is limited or costly. The system dynamically steers Internet-bound connections through selected gateways while retaining compatibility with standard Wi-Fi clients and commodity routers.",
+      "highlights": [
+        "Connection-level gateway selection and traffic steering across multiple Internet gateways.",
+        "Kernel and user-space packet-processing pipeline using Netfilter/NFQUEUE, routing, NAT state, and Netlink-based control.",
+        "Efficient asymmetric processing: outgoing LAN-to-Internet packets are classified and steered, while return traffic follows the established route without repeated application-level filtering.",
+        "Prototype validation using real network measurements, traffic logs, and multi-gateway test scenarios."
+      ],
+      "deliverables": [
+        "Functional OpenWrt multi-gateway mesh prototype.",
+        "Gateway-selection and per-flow forwarding modules.",
+        "Kernel flow-state tables and C-based Netlink control software.",
+        "Experimental evaluation tools, measurement datasets, and technical documentation."
+      ]
+    },
+    {
+      "title": "Cost-Aware Load Balancing and Seamless Mobility for Cellular-Enabled Wi-Fi Mesh Networks",
+      "summary": "This project investigated the use of multiple cellular-enabled routers as Internet gateways for large-scale Wi-Fi mesh networks. A centrally controlled architecture was developed to balance traffic across cellular gateways while considering both cellular data quotas and multi-hop forwarding cost. The system also supports station mobility without interrupting active TCP connections.",
+      "highlights": [
+        "SDN-inspired control architecture implemented on commodity Linux-based routers.",
+        "Quadratic Programming-Assisted Load Balancing (QPLB) for joint optimization of gateway quota usage and mesh forwarding cost.",
+        "Concurrent utilization of multiple cellular gateways.",
+        "On-demand per-connection forwarding that preserves active TCP sessions when a client roams between mesh nodes.",
+        "No modifications required to client devices or underlying Wi-Fi standards.",
+        "Evaluation showed a 58%–83% reduction in cellular-quota imbalance and a 34% reduction in median byte-weighted hop count compared with representative baselines."
+      ],
+      "deliverables": [
+        "QPLB optimization algorithm and simulation framework.",
+        "Fully functional prototype on off-the-shelf wireless routers.",
+        "Seamless-roaming and per-connection forwarding mechanisms.",
+        "Simulation and prototype evaluation results.",
+        "Granted CN118233979B: A Method and a System for Seamless Roaming in Mesh Network (一种在Mesh网络中无缝漫游的方法及系统).",
+        "Granted CN118488512B: A Method and a System for Multi-Gateway Data Processing in LAN (一种局域网中多网关处理数据的方法及系统).",
+        "Granted CN118524445B: A Method and an Equipment for Traffic Load-Balancing in Mesh Network (一种Mesh网络中流量负载均衡方法和装置)."
+      ]
+    }
+  ]
 }

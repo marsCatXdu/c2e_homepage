@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
+import NewsArticlePage from '../../views/NewsArticlePage.astro';
 
 export async function getStaticPaths() {
   const news = await getCollection('news');
@@ -11,41 +11,6 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
-const base = import.meta.env.BASE_URL;
-const formatted = entry.data.date.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
-const imageSrc = entry.data.image
-  ? entry.data.image.startsWith('http')
-    ? entry.data.image
-    : `${base}${entry.data.image.replace(/^\//, '')}`
-  : undefined;
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.summary}>
-  <article class="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
-    <p class="text-sm">
-      <a href={`${base}news/`} class="text-teal hover:underline">← News</a>
-    </p>
-    <time class="mt-8 block text-xs font-medium uppercase tracking-wide text-teal" datetime={entry.data.date.toISOString()}>
-      {formatted}
-    </time>
-    <h1 class="mt-3 font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
-      {entry.data.title}
-    </h1>
-    <p class="mt-4 text-lg text-muted">{entry.data.summary}</p>
-    {
-      imageSrc && (
-        <figure class="mt-10 overflow-hidden rounded-md bg-canvas">
-          <img src={imageSrc} alt="" class="w-full object-cover" />
-        </figure>
-      )
-    }
-    <div class="prose-c2e mt-10 text-base text-body">
-      <Content />
-    </div>
-  </article>
-</BaseLayout>
+<NewsArticlePage entry={entry} />

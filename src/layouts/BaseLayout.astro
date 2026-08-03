@@ -2,22 +2,29 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import site from '../data/site.json';
+import { getLocaleFromUrl, type Locale } from '../i18n/locales';
+import { getSite, htmlLang } from '../i18n/site';
+import { t } from '../i18n/ui';
 
 interface Props {
   title?: string;
   description?: string;
 }
 
+const base = import.meta.env.BASE_URL;
+const locale: Locale = Astro.currentLocale === 'zh-cn'
+  ? 'zh-cn'
+  : getLocaleFromUrl(Astro.url, base);
+const site = getSite(locale);
+
 const { title, description = site.description } = Astro.props;
 const pageTitle = title
-  ? `${title} · ${site.name} @ HKUST`
-  : `${site.name} @ HKUST · ${site.tagline}`;
-const base = import.meta.env.BASE_URL;
+  ? `${title} · ${site.shortName} Lab @ HKUST-GZ`
+  : `${site.name} (${site.shortName}) @ HKUST-GZ`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang(locale)}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -32,17 +39,96 @@ const base = import.meta.env.BASE_URL;
     />
     <title>{pageTitle}</title>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col" data-locale={locale} data-base={base}>
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-teal focus:px-3 focus:py-2 focus:text-white"
     >
-      Skip to content
+      {t(locale, 'skip')}
     </a>
-    <Header />
+    <Header locale={locale} />
     <main id="main" class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer locale={locale} />
+    <script is:inline>
+      (function () {
+        var STORAGE_KEY = 'c2e-lang';
+        var body = document.body;
+        var base = body.getAttribute('data-base') || '/';
+        var current = body.getAttribute('data-locale') || 'en';
+
+        function normalizeBase(b) {
+          if (!b || b === '/') return '/';
+          return b.endsWith('/') ? b : b + '/';
+        }
+
+        function stripBase(pathname, b) {
+          var nb = normalizeBase(b);
+          if (nb !== '/' && pathname.startsWith(nb.slice(0, -1))) {
+            var rest = pathname.slice(nb.slice(0, -1).length) || '/';
+            return rest.startsWith('/') ? rest : '/' + rest;
+          }
+          return pathname;
+        }
+
+        function withoutLocale(path) {
+          if (path === '/zh-cn' || path === '/zh-cn/') return '/';
+          if (path.indexOf('/zh-cn/') === 0) return path.slice('/zh-cn'.length) || '/';
+          return path;
+        }
+
+        function withLocale(locale, path) {
+          var p = path === '/' ? '' : path.replace(/\/?$/, '/');
+          var nb = normalizeBase(base);
+          if (locale === 'zh-cn') return nb + 'zh-cn' + (p || '/');
+          return nb.replace(/\/?$/, '/') + (p ? p.replace(/^\//, '') : '');
+        }
+
+        function prefersChinese() {
+          var langs = navigator.languages && navigator.languages.length
+            ? navigator.languages
+            : [navigator.language || ''];
+          return langs.some(function (l) {
+            return String(l).toLowerCase().indexOf('zh') === 0;
+          });
+        }
+
+        var stored = null;
+        try {
+          stored = localStorage.getItem(STORAGE_KEY);
+        } catch (e) {}
+
+        var path = withoutLocale(stripBase(location.pathname, base));
+        if (!path.endsWith('/')) {
+          // keep as-is for files; for directories Astro uses trailing slash
+        }
+
+        if (!stored) {
+          stored = prefersChinese() ? 'zh-cn' : 'en';
+          try {
+            localStorage.setItem(STORAGE_KEY, stored);
+          } catch (e) {}
+        }
+
+        if (stored !== current && (stored === 'en' || stored === 'zh-cn')) {
+          var target = withLocale(stored, path === '' ? '/' : path);
+          if (target !== location.pathname) {
+            location.replace(target + location.search + location.hash);
+          }
+        }
+
+        document.querySelectorAll('[data-set-lang]').forEach(function (el) {
+          el.addEventListener('click', function () {
+            var lang = el.getAttribute('data-set-lang');
+            if (lang === 'en' || lang === 'zh-cn') {
+              try {
+                localStorage.setItem(STORAGE_KEY, lang);
+              } catch (e) {}
+            }
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

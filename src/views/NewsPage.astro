@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import { getCollection } from 'astro:content';
+import { getLocaleFromUrl, localizePath, type Locale } from '../i18n/locales';
+import { t } from '../i18n/ui';
+
+const base = import.meta.env.BASE_URL;
+const locale: Locale = Astro.currentLocale === 'zh-cn' ? 'zh-cn' : getLocaleFromUrl(Astro.url, base);
+const news = (await getCollection('news')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout title={t(locale, 'news.title')} description={t(locale, 'news.intro')}>
+  <div class="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.15em] text-teal">{t(locale, 'news.eyebrow')}</p>
+    <h1 class="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">{t(locale, 'news.title')}</h1>
+    <p class="mt-4 max-w-2xl text-muted">{t(locale, 'news.intro')}</p>
+    <div class="mt-12">
+      {
+        news.map((item) => (
+          <NewsCard
+            title={item.data.title}
+            date={item.data.date}
+            summary={item.data.summary}
+            href={localizePath(locale, `/news/${item.id}/`, base)}
+            image={item.data.image}
+            locale={locale}
+          />
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

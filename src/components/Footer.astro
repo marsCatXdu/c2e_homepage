@@ -1,28 +1,41 @@
 ---
-import site from '../data/site.json';
+import { getSite } from '../i18n/site';
+import { localizePath, type Locale } from '../i18n/locales';
+import { t } from '../i18n/ui';
 
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const site = getSite(locale);
 const year = new Date().getFullYear();
 ---
 
 <footer class="mt-auto border-t border-line bg-canvas">
   <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 md:flex-row md:items-end md:justify-between md:px-8">
     <div>
-      <p class="font-display text-xl font-semibold text-ink">{site.name}</p>
-      <p class="mt-1 max-w-md text-sm text-muted">{site.affiliation}</p>
+      <p class="font-display text-xl font-semibold text-ink">
+        {site.shortName}
+        <span class="text-muted"> Lab</span>
+      </p>
+      <p class="mt-1 max-w-lg text-sm font-medium leading-snug text-ink-soft">{site.name}</p>
+      <p class="mt-2 max-w-md text-sm text-muted">{site.affiliation}</p>
       <p class="mt-3 text-sm">
         <a class="text-teal hover:underline" href={`mailto:${site.email}`}>{site.email}</a>
       </p>
     </div>
     <div class="flex flex-wrap gap-4 text-sm text-muted">
-      <a href={`${base}people/`} class="hover:text-teal">People</a>
-      <a href={`${base}publications/`} class="hover:text-teal">Publications</a>
-      <a href={`${base}contact/`} class="hover:text-teal">Contact</a>
+      <a href={localizePath(locale, '/people/', base)} class="hover:text-teal">{t(locale, 'footer.people')}</a>
+      <a href={localizePath(locale, '/publications/', base)} class="hover:text-teal">{t(locale, 'footer.publications')}</a>
+      <a href={localizePath(locale, '/projects/', base)} class="hover:text-teal">{t(locale, 'footer.projects')}</a>
+      <a href={localizePath(locale, '/contact/', base)} class="hover:text-teal">{t(locale, 'footer.contact')}</a>
     </div>
   </div>
   <div class="border-t border-line/70">
     <p class="mx-auto max-w-6xl px-5 py-4 text-xs text-muted md:px-8">
-      © {year} {site.name}. Research group led by {site.pi.name}.
+      © {year} {site.name} ({site.shortName}). {t(locale, 'footer.led')} {site.pi.shortName ?? site.pi.name}.
     </p>
   </div>
 </footer>

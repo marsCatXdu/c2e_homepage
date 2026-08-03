@@ -1,20 +1,39 @@
 ---
-import site from '../data/site.json';
+import { getSite } from '../i18n/site';
+import { localizePath, stripLocaleFromPath, type Locale } from '../i18n/locales';
+import { t } from '../i18n/ui';
 
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const site = getSite(locale);
 const pathname = Astro.url.pathname;
+const cleanPath = stripLocaleFromPath(pathname, base);
+const switchEn = localizePath('en', cleanPath, base);
+const switchZh = localizePath('zh-cn', cleanPath, base);
 
 const links = [
-  { href: base, label: 'Home' },
-  { href: `${base}news/`, label: 'News' },
-  { href: `${base}people/`, label: 'People' },
-  { href: `${base}publications/`, label: 'Publications' },
-  { href: `${base}contact/`, label: 'Contact' },
-];
+  { path: '/', label: t(locale, 'nav.home') },
+  { path: '/news/', label: t(locale, 'nav.news') },
+  { path: '/people/', label: t(locale, 'nav.people') },
+  { path: '/publications/', label: t(locale, 'nav.publications') },
+  { path: '/projects/', label: t(locale, 'nav.projects') },
+  { path: '/contact/', label: t(locale, 'nav.contact') },
+].map((link) => ({
+  ...link,
+  href: localizePath(locale, link.path, base),
+}));
 
 function isActive(href: string) {
-  if (href === base) {
-    return pathname === base || pathname === `${base}index.html` || pathname.replace(/\/$/, '') === base.replace(/\/$/, '');
+  if (href === localizePath(locale, '/', base)) {
+    return (
+      pathname === href ||
+      pathname === `${href}index.html` ||
+      pathname.replace(/\/$/, '') === href.replace(/\/$/, '')
+    );
   }
   return pathname.startsWith(href);
 }
@@ -22,14 +41,19 @@ function isActive(href: string) {
 
 <header class="sticky top-0 z-40 border-b border-line/80 bg-surface/90 backdrop-blur-md">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8">
-    <a href={base} class="group flex items-baseline gap-2 no-underline">
-      <span class="font-display text-2xl font-semibold tracking-tight text-ink transition group-hover:text-teal">
-        {site.shortName}
+    <a href={localizePath(locale, '/', base)} class="group flex min-w-0 max-w-[min(100%,22rem)] flex-col no-underline lg:max-w-md">
+      <span class="flex items-baseline gap-2">
+        <span class="font-display text-2xl font-semibold tracking-tight text-ink transition group-hover:text-teal">
+          {site.shortName}
+        </span>
+        <span class="hidden text-xs font-medium text-muted sm:inline">Lab</span>
       </span>
-      <span class="hidden text-sm text-muted sm:inline">@ HKUST</span>
+      <span class="mt-0.5 line-clamp-2 text-[0.65rem] font-medium leading-snug text-muted sm:text-[0.7rem]">
+        {site.name}
+      </span>
     </a>
 
-    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Primary">
       {
         links.map((link) => (
           <a
@@ -46,16 +70,44 @@ function isActive(href: string) {
           </a>
         ))
       }
+      <div
+        class="ml-2 flex items-center rounded-md border border-line p-0.5 text-xs font-medium"
+        role="group"
+        aria-label={t(locale, 'nav.lang')}
+      >
+        <a
+          href={switchEn}
+          data-set-lang="en"
+          class:list={[
+            'rounded px-2 py-1 transition',
+            locale === 'en' ? 'bg-teal-muted text-teal' : 'text-muted hover:text-ink',
+          ]}
+          lang="en"
+        >
+          EN
+        </a>
+        <a
+          href={switchZh}
+          data-set-lang="zh-cn"
+          class:list={[
+            'rounded px-2 py-1 transition',
+            locale === 'zh-cn' ? 'bg-teal-muted text-teal' : 'text-muted hover:text-ink',
+          ]}
+          lang="zh-CN"
+        >
+          中文
+        </a>
+      </div>
     </nav>
 
-    <details class="relative md:hidden">
+    <details class="relative lg:hidden">
       <summary
         class="list-none cursor-pointer rounded-md border border-line px-3 py-2 text-sm font-medium text-ink marker:content-none [&::-webkit-details-marker]:hidden"
       >
-        Menu
+        {t(locale, 'nav.menu')}
       </summary>
       <nav
-        class="absolute right-0 mt-2 w-48 rounded-lg border border-line bg-surface p-2 shadow-lg"
+        class="absolute right-0 mt-2 w-52 rounded-lg border border-line bg-surface p-2 shadow-lg"
         aria-label="Mobile"
       >
         {
@@ -71,6 +123,30 @@ function isActive(href: string) {
             </a>
           ))
         }
+        <div class="mt-1 flex gap-1 border-t border-line pt-2">
+          <a
+            href={switchEn}
+            data-set-lang="en"
+            class:list={[
+              'flex-1 rounded-md px-3 py-2 text-center text-sm font-medium',
+              locale === 'en' ? 'bg-teal-muted text-teal' : 'text-body hover:bg-canvas',
+            ]}
+            lang="en"
+          >
+            EN
+          </a>
+          <a
+            href={switchZh}
+            data-set-lang="zh-cn"
+            class:list={[
+              'flex-1 rounded-md px-3 py-2 text-center text-sm font-medium',
+              locale === 'zh-cn' ? 'bg-teal-muted text-teal' : 'text-body hover:bg-canvas',
+            ]}
+            lang="zh-CN"
+          >
+            中文
+          </a>
+        </div>
       </nav>
     </details>
   </div>

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLocaleFromUrl, type Locale } from '../i18n/locales';
+import { getSite } from '../i18n/site';
+import { t } from '../i18n/ui';
+
+const base = import.meta.env.BASE_URL;
+const locale: Locale = Astro.currentLocale === 'zh-cn' ? 'zh-cn' : getLocaleFromUrl(Astro.url, base);
+const site = getSite(locale);
+---
+
+<BaseLayout title={t(locale, 'projects.title')} description={t(locale, 'projects.intro')}>
+  <div class="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.15em] text-teal">{t(locale, 'projects.eyebrow')}</p>
+    <h1 class="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">{t(locale, 'projects.title')}</h1>
+    <p class="mt-4 max-w-2xl text-muted">{t(locale, 'projects.intro')}</p>
+
+    <ul class="mt-14 list-none space-y-0 border-t border-line p-0">
+      {
+        site.projects.map((project) => (
+          <li class="border-b border-line py-10">
+            <h2 class="font-display text-xl font-semibold text-ink md:text-2xl">{project.title}</h2>
+            <p class="mt-4 max-w-3xl text-sm leading-relaxed text-body md:text-base">{project.summary}</p>
+
+            {project.highlights?.length > 0 && (
+              <div class="mt-6 max-w-3xl">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.12em] text-teal">
+                  {t(locale, 'projects.highlights')}
+                </h3>
+                <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-body">
+                  {project.highlights.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {project.deliverables?.length > 0 && (
+              <div class="mt-6 max-w-3xl">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.12em] text-teal">
+                  {t(locale, 'projects.deliverables')}
+                </h3>
+                <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-body">
+                  {project.deliverables.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

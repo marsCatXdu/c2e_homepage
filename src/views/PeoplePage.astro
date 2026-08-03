@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PersonCard from '../components/PersonCard.astro';
+import LinkedBio from '../components/LinkedBio.astro';
+import { getCollection } from 'astro:content';
+import { getLocaleFromUrl, type Locale } from '../i18n/locales';
+import { getProfessor } from '../i18n/professors';
+import { t, type UiKey } from '../i18n/ui';
+
+const base = import.meta.env.BASE_URL;
+const locale: Locale = Astro.currentLocale === 'zh-cn' ? 'zh-cn' : getLocaleFromUrl(Astro.url, base);
+const tsang = getProfessor('tsang');
+
+const people = await getCollection('people');
+const byRole = (role: string) =>
+  people
+    .filter((p) => p.data.role === role)
+    .sort((a, b) => a.data.order - b.data.order || a.data.name.localeCompare(b.data.name));
+
+const sections: { role: string; labelKey: UiKey; compact?: boolean }[] = [
+  { role: 'faculty', labelKey: 'people.faculty' },
+  { role: 'staff', labelKey: 'people.staff' },
+  { role: 'student', labelKey: 'people.student' },
+  { role: 'alumni', labelKey: 'people.alumni', compact: true },
+];
+
+const alumniNote =
+  locale === 'zh-cn'
+    ? {
+        before: '2013 年以前另有 4 名博士毕业生、32 名哲学硕士毕业生与 4 名博士后校友。',
+        link: '2013 年前校友详情',
+      }
+    : {
+        before:
+          'We have another 4 Ph.D. graduates, 32 M.Phil. graduates and 4 Postdoc alumni before 2013.',
+        link: 'Details of pre-2013 alumni',
+      };
+---
+
+<BaseLayout title={t(locale, 'people.title')} description={t(locale, 'people.intro')}>
+  <div class="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.15em] text-teal">{t(locale, 'people.eyebrow')}</p>
+    <h1 class="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">{t(locale, 'people.title')}</h1>
+    <p class="mt-4 max-w-2xl text-muted">{t(locale, 'people.intro')}</p>
+
+    {
+      sections.map((section) => {
+        const members = byRole(section.role);
+        if (members.length === 0) return null;
+        const compact = Boolean(section.compact);
+        return (
+          <section class="mt-16">
+            <h2 class="border-b border-line pb-3 font-display text-2xl font-semibold text-ink">
+              {t(locale, section.labelKey)}
+            </h2>
+            <div>
+              {members.map((person) => {
+                const displayTitle =
+                  locale === 'zh-cn' && person.data.titleZh
+                    ? person.data.titleZh
+                    : person.data.title;
+                const bioText =
+                  locale === 'zh-cn' && person.data.bioZh?.trim()
+                    ? person.data.bioZh.trim()
+                    : person.body?.trim();
+                const nameHref =
+                  person.id === 'danny-hin-kwok-tsang' || person.data.email === 'eetsang@ust.hk'
+                    ? tsang?.url
+                    : undefined;
+                return (
+                  <PersonCard
+                    name={person.data.name}
+                    nameZh={person.data.nameZh}
+                    title={displayTitle}
+                    email={person.data.email}
+                    website={person.data.website}
+                    photo={person.data.photo}
+                    compact={compact}
+                    locale={locale}
+                    nameHref={nameHref}
+                  >
+                    {!compact && bioText && <LinkedBio text={bioText} locale={locale} />}
+                  </PersonCard>
+                );
+              })}
+            </div>
+            {section.role === 'alumni' && (
+              <p class="mt-6 text-sm text-muted">
+                {alumniNote.before}{' '}
+                <a
+                  class="text-teal hover:underline"
+                  href="https://eetsang.home.ece.ust.hk/thesis.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {alumniNote.link}
+                </a>
+                .
+              </p>
+            )}
+          </section>
+        );
+      })
+    }
+  </div>
+</BaseLayout>

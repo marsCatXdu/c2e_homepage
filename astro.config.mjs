@@ -16,4 +16,17 @@ export default defineConfig({
     host: '127.0.0.1',
     port: 4321,
   },
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      'en',
+      {
+        path: 'zh-cn',
+        codes: ['zh-CN', 'zh', 'zh-Hans'],
+      },
+    ],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });

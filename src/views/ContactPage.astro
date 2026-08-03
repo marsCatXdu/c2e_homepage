@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLocaleFromUrl, type Locale } from '../i18n/locales';
+import { getSite } from '../i18n/site';
+import { t } from '../i18n/ui';
+
+const base = import.meta.env.BASE_URL;
+const locale: Locale = Astro.currentLocale === 'zh-cn' ? 'zh-cn' : getLocaleFromUrl(Astro.url, base);
+const site = getSite(locale);
+---
+
+<BaseLayout title={t(locale, 'contact.title')} description={t(locale, 'contact.intro')}>
+  <div class="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.15em] text-teal">{t(locale, 'contact.eyebrow')}</p>
+    <h1 class="mt-3 font-display text-4xl font-semibold text-ink md:text-5xl">{t(locale, 'contact.title')}</h1>
+    <p class="mt-4 max-w-2xl text-lg text-muted">{t(locale, 'contact.intro')}</p>
+
+    <div class="mt-14 grid gap-12 border-t border-line pt-12 md:grid-cols-2">
+      <div>
+        <h2 class="font-display text-xl font-semibold text-ink">{t(locale, 'contact.pi')}</h2>
+        <p class="mt-3 text-body">{site.pi.name}</p>
+        <p class="text-sm text-muted">{site.pi.title}</p>
+        <p class="mt-4">
+          <a class="font-medium text-teal hover:underline" href={`mailto:${site.email}`}>
+            {site.email}
+          </a>
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-xl font-semibold text-ink">{t(locale, 'contact.affiliation')}</h2>
+        <p class="mt-3 text-body">{site.name}</p>
+        <p class="mt-1 text-muted">{site.affiliation}</p>
+        <p class="mt-1 text-muted">{site.campus}</p>
+        <p class="mt-1 text-muted">{site.location}</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

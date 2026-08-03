@@ -5,11 +5,12 @@ interface Props {
   summary: string;
   href: string;
   image?: string;
+  locale?: 'en' | 'zh-cn';
 }
 
-const { title, date, summary, href, image } = Astro.props;
+const { title, date, summary, href, image, locale = 'en' } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const formatted = date.toLocaleDateString('en-US', {
+const formatted = date.toLocaleDateString(locale === 'zh-cn' ? 'zh-CN' : 'en-US', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',

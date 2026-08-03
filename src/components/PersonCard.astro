@@ -1,20 +1,37 @@
 ---
+import { linkifyProfessorParts } from '../i18n/professors';
+
 interface Props {
   name: string;
+  nameZh?: string;
   title: string;
   email?: string;
   website?: string;
   photo?: string;
   compact?: boolean;
+  locale?: 'en' | 'zh-cn';
+  nameHref?: string;
 }
 
-const { name, title, email, website, photo, compact = false } = Astro.props;
+const {
+  name,
+  nameZh,
+  title,
+  email,
+  website,
+  photo,
+  compact = false,
+  locale = 'en',
+  nameHref,
+} = Astro.props;
 const base = import.meta.env.BASE_URL;
 const photoSrc = photo
   ? photo.startsWith('http')
     ? photo
     : `${base}${photo.replace(/^\//, '')}`
   : undefined;
+const displayName = nameZh ? `${name}（${nameZh}）` : name;
+const titleParts = linkifyProfessorParts(title, locale);
 ---
 
 <article
@@ -51,9 +68,31 @@ const photoSrc = photo
           />
         )
       }
-      <h3 class="font-display text-xl font-semibold text-ink">{name}</h3>
+      <h3 class="font-display text-xl font-semibold text-ink">
+        {
+          nameHref ? (
+            <a class="text-ink hover:text-teal hover:underline" href={nameHref} target="_blank" rel="noopener noreferrer">
+              {displayName}
+            </a>
+          ) : (
+            displayName
+          )
+        }
+      </h3>
     </div>
-    <p class="mt-1 text-sm font-medium text-muted">{title}</p>
+    <p class="mt-1 text-sm font-medium text-muted">
+      {
+        titleParts.map((part) =>
+          part.type === 'prof' ? (
+            <a class="text-teal hover:underline" href={part.href} target="_blank" rel="noopener noreferrer">
+              {part.value}
+            </a>
+          ) : (
+            part.value
+          ),
+        )
+      }
+    </p>
     {
       !compact && (
         <div class="prose-c2e mt-3 text-sm text-body">

@@ -1,0 +1,30 @@
+---
+import { linkifyProfessorParts } from '../i18n/professors';
+
+interface Props {
+  text: string;
+  locale?: 'en' | 'zh-cn';
+}
+
+const { text, locale = 'en' } = Astro.props;
+const paragraphs = text
+  .split(/\n\s*\n/)
+  .map((p) => p.trim())
+  .filter(Boolean);
+---
+
+{
+  paragraphs.map((para) => (
+    <p>
+      {linkifyProfessorParts(para, locale).map((part) =>
+        part.type === 'prof' ? (
+          <a class="text-teal hover:underline" href={part.href} target="_blank" rel="noopener noreferrer">
+            {part.value}
+          </a>
+        ) : (
+          part.value
+        ),
+      )}
+    </p>
+  ))
+}

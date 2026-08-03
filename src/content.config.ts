@@ -16,12 +16,15 @@ const people = defineCollection({
   loader: glob({ base: './src/content/people', pattern: '**/*.md' }),
   schema: z.object({
     name: z.string(),
+    nameZh: z.string().optional(),
     role: z.enum(['faculty', 'staff', 'student', 'alumni']),
     title: z.string(),
+    titleZh: z.string().optional(),
     email: z.string().optional(),
     website: z.string().optional(),
     photo: z.string().optional(),
     order: z.number().default(100),
+    bioZh: z.string().optional(),
   }),
 });
 

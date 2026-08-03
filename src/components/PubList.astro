@@ -1,5 +1,7 @@
 ---
 import PubItem from './PubItem.astro';
+import type { Locale } from '../i18n/locales';
+import { t } from '../i18n/ui';
 
 interface Pub {
   id: string;
@@ -14,34 +16,41 @@ interface Pub {
 
 interface Props {
   publications: Pub[];
+  locale?: Locale;
 }
 
-const { publications } = Astro.props;
+const { publications, locale = 'en' } = Astro.props;
 
 const fieldOptions = [
-  { value: 'all', label: 'All fields' },
-  { value: 'smart-grids', label: 'Smart Grids' },
-  { value: 'cloud-edge', label: 'Cloud / Edge' },
-  { value: 'wireless', label: 'Wireless' },
-  { value: 'online-algorithms', label: 'Online Algorithms' },
+  { value: 'all', label: t(locale, 'pubs.allFields') },
+  { value: 'smart-grids', label: t(locale, 'pubs.smartGrids') },
+  { value: 'cloud-edge', label: t(locale, 'pubs.cloudEdge') },
+  { value: 'wireless', label: t(locale, 'pubs.wireless') },
+  { value: 'online-algorithms', label: t(locale, 'pubs.onlineAlgorithms') },
 ];
+
+const years = [...new Set(publications.map((p) => p.year))].sort((a, b) => b - a);
+const byYear = years.map((year) => ({
+  year,
+  items: publications.filter((p) => p.year === year),
+}));
 ---
 
 <div class="pub-filter" data-pub-filter>
   <div class="mb-8 flex flex-wrap gap-3">
     <label class="flex flex-col gap-1 text-xs font-medium uppercase tracking-wide text-muted">
-      Type
+      {t(locale, 'pubs.type')}
       <select
         data-filter-type
         class="rounded-md border border-line bg-surface px-3 py-2 text-sm font-medium normal-case tracking-normal text-ink"
       >
-        <option value="all">All types</option>
-        <option value="journal">Journal</option>
-        <option value="conference">Conference</option>
+        <option value="all">{t(locale, 'pubs.allTypes')}</option>
+        <option value="journal">{t(locale, 'pubs.journal')}</option>
+        <option value="conference">{t(locale, 'pubs.conference')}</option>
       </select>
     </label>
     <label class="flex flex-col gap-1 text-xs font-medium uppercase tracking-wide text-muted">
-      Field
+      {t(locale, 'pubs.field')}
       <select
         data-filter-field
         class="rounded-md border border-line bg-surface px-3 py-2 text-sm font-medium normal-case tracking-normal text-ink"
@@ -52,26 +61,37 @@ const fieldOptions = [
   </div>
 
   <p class="mb-4 text-sm text-muted">
-    Showing <span data-count>{publications.length}</span> of {publications.length} publications
+    {t(locale, 'pubs.showing')} <span data-count>{publications.length}</span> {t(locale, 'pubs.of')}{' '}
+    {publications.length} {t(locale, 'pubs.publications')}
   </p>
 
-  <ul class="list-none p-0" data-pub-list>
+  <div data-pub-list>
     {
-      publications.map((pub) => (
-        <PubItem
-          authors={pub.authors}
-          title={pub.title}
-          venue={pub.venue}
-          year={pub.year}
-          type={pub.type}
-          fields={pub.fields}
-          url={pub.url}
-        />
+      byYear.map(({ year, items }) => (
+        <section class="pub-year-group mt-14 first:mt-0" data-year-group={year}>
+          <h2 class="sticky top-[4.25rem] z-10 -mx-1 mb-2 border-b border-line bg-surface/95 px-1 pb-2 font-display text-2xl font-semibold text-ink backdrop-blur-sm">
+            {year}
+          </h2>
+          <ul class="list-none p-0">
+            {items.map((pub) => (
+              <PubItem
+                authors={pub.authors}
+                title={pub.title}
+                venue={pub.venue}
+                year={pub.year}
+                type={pub.type}
+                fields={pub.fields}
+                url={pub.url}
+                locale={locale}
+              />
+            ))}
+          </ul>
+        </section>
       ))
     }
-  </ul>
+  </div>
 
-  <p data-empty class="hidden py-12 text-center text-muted">No publications match these filters.</p>
+  <p data-empty class="hidden py-12 text-center text-muted">{t(locale, 'pubs.empty')}</p>
 </div>
 
 <script>
@@ -82,6 +102,7 @@ const fieldOptions = [
     const typeSelect = root.querySelector('[data-filter-type]') as HTMLSelectElement | null;
     const fieldSelect = root.querySelector('[data-filter-field]') as HTMLSelectElement | null;
     const items = Array.from(root.querySelectorAll('.pub-item')) as HTMLElement[];
+    const groups = Array.from(root.querySelectorAll('[data-year-group]')) as HTMLElement[];
     const countEl = root.querySelector('[data-count]');
     const emptyEl = root.querySelector('[data-empty]');
 
@@ -100,12 +121,20 @@ const fieldOptions = [
         if (show) visible += 1;
       }
 
+      for (const group of groups) {
+        const anyVisible = Array.from(group.querySelectorAll('.pub-item')).some(
+          (el) => !(el as HTMLElement).hidden,
+        );
+        group.hidden = !anyVisible;
+      }
+
       if (countEl) countEl.textContent = String(visible);
       if (emptyEl) emptyEl.classList.toggle('hidden', visible > 0);
     }
 
     typeSelect?.addEventListener('change', apply);
     fieldSelect?.addEventListener('change', apply);
+    apply();
   }
 
   initPubFilter();
